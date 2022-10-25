@@ -35,7 +35,7 @@ For Inception_V1, there is one `Placeholder`: input. If the model is viewed in T
 
 In TensorBoard, along with some of its predecessors, it looks as follows:
 
-![TensorBoard with predecessors](../../img/inception_v1_std_output.png)
+![TensorBoard with predecessors](../../img/inception_v1_std_output.svg)
 
 Convert this model and put the results in a writable output directory:
 ```sh
