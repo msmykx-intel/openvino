@@ -48,7 +48,7 @@ In this example, the stride from the `res3a_branch1` and `res3a_branch2a` Convol
 
 Grouped convolution fusing is a specific optimization that applies for TensorFlow topologies. The main idea of this optimization is to combine convolutions results for the `Split` outputs and then recombine them using `Concat` operation in the same order as they were out from `Split`.
 
-![Split→Convolutions→Concat block from TensorBoard*](../img/optimizations/groups.png)
+![Split→Convolutions→Concat block from TensorBoard*](../img/optimizations/groups.svg)
 
 * * *
 
