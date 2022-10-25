@@ -62,4 +62,4 @@ On the picture below you can see two visualized Intermediate Representations (IR
 The first one is original IR that will be produced by the Model Optimizer.
 The second one will be produced by the Model Optimizer with key `--finegrain_fusing InceptionV4/InceptionV4/Conv2d_1a_3x3/Conv2D`, where you can see that `Convolution` was not fused with `Mul1_3752` and `Mul1_4061/Fused_Mul_5096/FusedScaleShift_5987` operations.
 
-![TF InceptionV4 block without/with key --finegrain_fusing (from IR visualizer)](../img/optimizations/inception_v4.png)
+![TF InceptionV4 block without/with key --finegrain_fusing (from IR visualizer)](../img/optimizations/inception_v4.svg)
