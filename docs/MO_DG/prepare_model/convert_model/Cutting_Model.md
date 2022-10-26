@@ -90,7 +90,7 @@ The Intermediate Representations are identical for both conversions. The same is
 
 Now, consider how to cut some parts of the model off. This chapter describes the first convolution block `InceptionV1/InceptionV1/Conv2d_1a_7x7` of the Inception V1 model to illustrate cutting: 
 
-![Inception V1 first convolution block](../../img/inception_v1_first_block.png)
+![Inception V1 first convolution block](../../img/inception_v1_first_block.svg)
 
 ### Cutting at the End
 
