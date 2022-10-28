@@ -29,7 +29,7 @@ The input model is converted as a whole if neither `--input` nor `--output` comm
 
 For Inception_V1, there is one `Placeholder`: input. If the model is viewed in TensorBoard, the input operation is easy to find:
  
-![Placeholder in Inception V1](../../img/inception_v1_std_input.png)
+![Placeholder in Inception V1](../../img/inception_v1_std_input.svg)
 
 `Reshape` is the only output operation, which is enclosed in a nested name scope of `InceptionV1/Logits/Predictions`, under the full name of `InceptionV1/Logits/Predictions/Reshape_1`.
 
