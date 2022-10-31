@@ -26,7 +26,7 @@ This optimization method consists of three stages:
 
 The picture below shows the depicted part of Caffe Resnet269 topology where `BatchNorm` and `ScaleShift` layers will be fused to `Convolution` layers.
 
-![Caffe ResNet269 block before and after optimization generated with Netscope*](../img/optimizations/resnet_269.png)
+![Caffe ResNet269 block before and after optimization generated with Netscope*](../img/optimizations/resnet_269.svg)
 
 * * *
 
@@ -38,7 +38,7 @@ ResNet optimization is a specific optimization that applies to Caffe ResNet topo
 
 In the picture below, you can see the original and optimized parts of a Caffe ResNet50 model. The main idea of this optimization is to move the stride that is greater than 1 from Convolution layers with the kernel size = 1 to upper Convolution layers. In addition, the Model Optimizer adds a Pooling layer to align the input shape for a Eltwise layer, if it was changed during the optimization. 
 
-![ResNet50 blocks (original and optimized) from Netscope](../img/optimizations/resnet_optimization.png)
+![ResNet50 blocks (original and optimized) from Netscope](../img/optimizations/resnet_optimization.svg)
 
 In this example, the stride from the `res3a_branch1` and `res3a_branch2a` Convolution layers moves to the `res2c_branch2b` Convolution layer. In addition, to align the input shape for `res2c` Eltwise, the optimization inserts the Pooling layer with kernel size = 1 and stride = 2.
 
