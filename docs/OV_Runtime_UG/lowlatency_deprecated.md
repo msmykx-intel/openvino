@@ -67,7 +67,7 @@ After applying the transformation, `ReadValue` operations can receive other oper
    ```
 4. Use state API. 
 
-   See the [OpenVINO state API](network_state_intro.md#openvino-state-api) and the [Example of stateful network inference](network_state_intro.md#example-of-stateful-network-inference) sections.
+   See the [OpenVINO state API](./network_state_intro.md#openvino-state-api) and the [Example of stateful network inference](./network_state_intro.md#example-of-stateful-network-inference) sections.
 
  
 ## Known Limitations for the LowLatency

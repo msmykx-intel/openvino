@@ -28,7 +28,7 @@ and `ReadValue` - to read a value saved on previous iteration. For more details 
 [ReadValue specification](../ops/infrastructure/ReadValue_3.md) and [Assign specification](../ops/infrastructure/Assign_3.md) articles.
 
 To get a model with states ready for inference, convert a model from another framework to OpenVINO IR with Model Optimizer or create an nGraph function. 
-(For more information, refer to the [Build OpenVINO Model section](../OV_Runtime_UG/model_representation.md). 
+(For more information, refer to the [Build OpenVINO Model section](../OV_Runtime_UG/model_representation.md)). 
 
 Below is the graph in both forms:
 
