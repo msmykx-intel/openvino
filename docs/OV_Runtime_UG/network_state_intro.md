@@ -1,5 +1,15 @@
 # Stateful models {#openvino_docs_OV_UG_network_state_intro}
 
+@sphinxdirective
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   openvino_docs_OV_UG_lowlatency_deprecated
+
+@endsphinxdirective
+
 Several use cases require processing of data sequences. When length of a sequence is known and small enough, 
 it can be processed with RNN like networks that contain a cycle inside. However, in some cases, like online speech recognition of time series 
 forecasting, length of data sequence is unknown. Then, data can be divided in small portions and processed step-by-step. The dependency 
@@ -18,7 +28,7 @@ and `ReadValue` - to read a value saved on previous iteration. For more details 
 [ReadValue specification](../ops/infrastructure/ReadValue_3.md) and [Assign specification](../ops/infrastructure/Assign_3.md) articles.
 
 To get a model with states ready for inference, convert a model from another framework to OpenVINO IR with Model Optimizer or create an nGraph function. 
-(For more information, refer to the [Build OpenVINO Model section](../OV_Runtime_UG/model_representation.md)). 
+(For more information, refer to the [Build OpenVINO Model section](../OV_Runtime_UG/model_representation.md). 
 
 Below is the graph in both forms:
 
@@ -222,15 +232,13 @@ The `While` layer is converted to `TensorIterator`. The `TensorIterator` body ca
 
 The LowLatency2 transformation changes the structure of the network containing [TensorIterator](../ops/infrastructure/TensorIterator_1.md) and [Loop](../ops/infrastructure/Loop_5.md) by adding the ability to work with the state, inserting the `Assign`/`ReadValue` layers as it is shown in the picture below.
 
-#### The Differences between the LowLatency and the LowLatency2**:
+#### The Differences between the LowLatency and the LowLatency2:
 
 * Unrolling of `TensorIterator`/`Loop` operations became a part of the LowLatency2, not a separate transformation. After invoking the transformation, the network can be serialized and inferred without re-invoking the transformation.
 * Support for `TensorIterator` and `Loop` operations with multiple iterations inside. The `TensorIterator`/`Loop` will not be unrolled in this case.
 * The "Parameters connected directly to ReadValues" limitation is resolved. To apply the previous version of the transformation in this case, additional manual manipulations were required. Now, the case is processed automatically.
 
-#### Example of Applying the LowLatency2 Transformation:
-
-<a name="example-of-applying-lowlatency2-transformation"></a>
+#### Example of Applying the LowLatency2 Transformation:<a name="example-of-applying-lowlatency2-transformation"></a>
 
 ![applying_low_latency_2_example](./img/applying_low_latency_2.png)
 
