@@ -1,4 +1,4 @@
-# The LowLatency Transformation {#openvino_docs_OV_UG_lowlatency_deprecated}
+# [DEPRECATED] The LowLatency Transformation {#openvino_docs_OV_UG_lowlatency_deprecated}
 
 The deprecated LowLatency transformation changes the structure of the network containing [TensorIterator](../ops/infrastructure/TensorIterator_1.md) and [Loop](../ops/infrastructure/Loop_5.md) operations by adding the ability to work with the state, inserting the `Assign`/`ReadValue` layers, as shown in the picture below.
 
