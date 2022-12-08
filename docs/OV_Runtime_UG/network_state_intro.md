@@ -205,7 +205,7 @@ One infer request and one thread will be used in this example. Using several thr
 More elaborate examples demonstrating how to work with networks with states can be found in a speech sample and a demo. 
 Refer to the [Samples Overview](./Samples_Overview.md).
 
-[state_network_example]: ./img/state_network_example.png
+[state_network_example]: ./img/state_network_example.svg
 
 ## LowLatency Transformations
 
