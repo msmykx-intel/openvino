@@ -1,6 +1,6 @@
 # [DEPRECATED] The LowLatency Transformation {#openvino_docs_OV_UG_lowlatency_deprecated}
 
-The deprecated LowLatency transformation changes the structure of the network containing [TensorIterator](../ops/infrastructure/TensorIterator_1.md) and [Loop](../ops/infrastructure/Loop_5.md) operations by adding the ability to work with the state, inserting the `Assign`/`ReadValue` layers, as shown in the picture below.
+The deprecated LowLatency transformation changes the structure of the network containing [TensorIterator](../ops/infrastructure/TensorIterator_1.md) and [Loop](../ops/infrastructure/Loop_5.md) operations by adding the ability to work with the state, inserting the [Assign](../ops/infrastructure/Assign_3.md)/[ReadValue](../ops/infrastructure/ReadValue_3.md) layers, as shown in the picture below.
 
 ![applying_low_latency_example](./img/applying_low_latency.png)
 
@@ -39,7 +39,7 @@ After applying the transformation, `ReadValue` operations can receive other oper
 
    InferenceEngine::LowLatency(cnnNetwork);
    ```
-   **State naming rule:**  A name of a state is a concatenation of names: original `TensorIterator` operation, parameter of the body, and additional suffix `variable_` + `id` (0-base indexing, new indexing for each `TensorIterator`). Use these rules to predict the name of the inserted state after the transformation is applied. For example:
+   **State naming rule**:  A name of a state is a concatenation of names: original `TensorIterator` operation, parameter of the body, and additional suffix `variable_` + `id` (0-base indexing, new indexing for each `TensorIterator`). Use these rules to predict the name of the inserted state after the transformation is applied. For example:
 
    ```cpp
       // Precondition in ngraph::function.
@@ -65,9 +65,7 @@ After applying the transformation, `ReadValue` operations can receive other oper
          }
       }
    ```
-4. Use state API. 
-
-   See the [OpenVINO state API](./network_state_intro.md#openvino-state-api) and the [Example of stateful network inference](./network_state_intro.md#example-of-stateful-network-inference) sections.
+4. Use state API. See the [OpenVINO state API](./network_state_intro.md#openvino-state-api) and the [Example of stateful network inference](./network_state_intro.md#example-of-stateful-network-inference) sections.
 
  
 ## Known Limitations for the LowLatency
