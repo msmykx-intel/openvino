@@ -11,8 +11,8 @@
 @endsphinxdirective
 
 Several use cases require processing of data sequences. When length of a sequence is known and small enough, 
-it can be processed with RNN like networks that contain a cycle inside. However, in some cases, like online speech recognition of time series 
-forecasting, length of data sequence is unknown. Then, data can be divided in small portions and processed step-by-step. The dependency 
+it can be processed with RNN like networks that contain a cycle inside. However, in some cases (e.g., online speech recognition of time series 
+forecasting) length of data sequence is unknown. Then, data can be divided in small portions and processed step-by-step. The dependency 
 between data portions should be addressed. For that, networks save some data between inferences - a state. When one dependent sequence is over,
 a state should be reset to initial value and a new sequence can be started.
 
@@ -23,16 +23,15 @@ and there is a way to reset a state when needed. A state can also be read or set
  
 ## OpenVINO State Representation
 
-OpenVINO contains the `Variable`, a special abstraction to represent a state in a network. There are two operations: `Assign` - to save a value in a state 
-and `ReadValue` - to read a value saved on previous iteration. For more details on these operations, refer to the 
-[ReadValue specification](../ops/infrastructure/ReadValue_3.md) and [Assign specification](../ops/infrastructure/Assign_3.md) articles.
-
+OpenVINO contains the `Variable`, a special abstraction to represent a state in a network. There are two operations: [Assign](../ops/infrastructure/Assign_3.md) - to save a value in a state 
+and [ReadValue](../ops/infrastructure/ReadValue_3.md) - to read a value saved on previous iteration.
+ 
 To get a model with states ready for inference, convert a model from another framework to OpenVINO IR with Model Optimizer or create an nGraph function. 
 (For more information, refer to the [Build OpenVINO Model section](../OV_Runtime_UG/model_representation.md)). 
 
 Below is the graph in both forms:
 
-![state_network_example]
+![state_network_example](./img/state_network_example.svg)
 
 ### Example of IR with State
 
@@ -185,14 +184,10 @@ In the following example, the `SinkVector` is used to create the `ngraph::Functi
 
 Inference Engine has the `InferRequest::QueryState` method to get the list of states from a network and `IVariableState` interface to operate with states. Below is a brief description of methods and the example of how to use this interface.
 
-* `std::string GetName() const` -
-  returns the name (variable_id) of a corresponding Variable.
-* `void Reset()` - 
-  resets a state to a default value.
-* `void SetState(Blob::Ptr newState)` - 
-  sets a new value for a state.
-* `Blob::CPtr GetState() const` - 
-  returns current value of state.
+* `std::string GetName() const` - returns the name (variable_id) of a corresponding Variable.
+* `void Reset()` - resets a state to a default value.
+* `void SetState(Blob::Ptr newState)` - sets a new value for a state.
+* `Blob::CPtr GetState() const` - returns current value of state.
 
 ## Example of Stateful Network Inference
 
@@ -202,31 +197,28 @@ One infer request and one thread will be used in this example. Using several thr
 
 @snippet openvino/docs/snippets/InferenceEngine_network_with_state_infer.cpp part1
 
-More elaborate examples demonstrating how to work with networks with states can be found in a speech sample and a demo. 
-Refer to the [Samples Overview](./Samples_Overview.md).
-
-[state_network_example]: ./img/state_network_example.svg
+For more elaborate examples demonstrating how to work with networks with states, refer to the speech sample and a demo in the [Samples Overview](./Samples_Overview.md). 
 
 ## LowLatency Transformations
 
-If the original framework does not have a special API for working with states, after importing the model, OpenVINO representation will not contain `Assign`/`ReadValue` layers. For example, if the original ONNX model contains RNN operations, OpenVINO IR will contain `TensorIterator` operations and the values will be obtained only after execution of the whole `TensorIterator` primitive. Intermediate values from each iteration will not be available. Working with these intermediate values of each iteration is enabled by special LowLatency and LowLatency2 transformations, which also help receive these values with a low latency after each infer request.
+If the original framework does not have a special API for working with states, OpenVINO representation will not contain `Assign`/`ReadValue` layers after importing the model. For example, if the original ONNX model contains RNN operations, OpenVINO IR will contain [TensorIterator](../ops/infrastructure/TensorIterator_1.md) operations and the values will be obtained only after execution of the whole `TensorIterator` primitive. Intermediate values from each iteration will not be available. Working with these intermediate values of each iteration is enabled by special LowLatency and LowLatency2 transformations, which also help receive these values with a low latency after each infer request.
 
 > **NOTE**: It is recommended to use LowLatency2, as LowLatency transformation has already been deprecated. For more information about the latter, refer to the dedicated [article](lowlatency_deprecated.md).
 
 ### How to Get TensorIterator/Loop operations from Different Frameworks via Model Optimizer.
 
-**ONNX and frameworks supported via ONNX format:** `LSTM`, `RNN`, and `GRU` original layers are converted to the `TensorIterator` operation. The `TensorIterator` 
+* **ONNX and frameworks supported via ONNX format** - `LSTM`, `RNN`, and `GRU` original layers are converted to the `TensorIterator` operation. The `TensorIterator` 
 body contains `LSTM`/`RNN`/`GRU Cell`. The `Peepholes` and `InputForget` modifications are not supported, while the `sequence_lengths` optional input is.
-`ONNX Loop` layer is converted to the OpenVINO Loop operation.
+`ONNX Loop` layer is converted to the OpenVINO [Loop](../ops/infrastructure/Loop_5.md) operation.
 
-**Apache MXNet:** `LSTM`, `RNN`, `GRU` original layers are converted to `TensorIterator` operation. The `TensorIterator` body contains `LSTM`/`RNN`/`GRU Cell` operations.
+* **Apache MXNet** - `LSTM`, `RNN`, `GRU` original layers are converted to `TensorIterator` operation, which body contains `LSTM`/`RNN`/`GRU Cell` operations.
 
-**TensorFlow:** The `BlockLSTM` is converted to `TensorIterator` operation. The `TensorIterator` body contains `LSTM Cell` operation, whereas `Peepholes` and `InputForget` modifications are not supported.
-The `While` layer is converted to `TensorIterator`. The `TensorIterator` body can contain any supported operations. However, when count of iterations cannot be calculated in shape inference (Model Optimizer conversion) time, the dynamic cases are not supported.
+* **TensorFlow** - `BlockLSTM` is converted to `TensorIterator` operation. The `TensorIterator` body contains `LSTM Cell` operation, whereas `Peepholes` and `InputForget` modifications are not supported.
+The `While` layer is converted to `TensorIterator`, which body can contain any supported operations. However, when count of iterations cannot be calculated in shape inference (Model Optimizer conversion) time, the dynamic cases are not supported.
 
-**TensorFlow2:** The `While` layer is converted to `Loop` operation. The `Loop` body can contain any supported operations.
+* **TensorFlow2** - `While` layer is converted to `Loop` operation, which body can contain any supported operations.
 
-**Kaldi:** Kaldi models already contain `Assign`/`ReadValue` (Memory) operations after model conversion. The `TensorIterator`/`Loop` operations are not generated.
+* **Kaldi** - Kaldi models already contain `Assign`/`ReadValue` (Memory) operations after model conversion. The `TensorIterator`/`Loop` operations are not generated.
 
 ### The LowLatencу2 Transformation
 
@@ -274,17 +266,15 @@ After applying the transformation, the `ReadValue` operations can receive other 
 
    InferenceEngine::lowLatency2(cnnNetwork); // 2nd argument 'use_const_initializer = true' by default
    ```
-   **Use_const_initializer argument**
-
-   By default, the LowLatency2 transformation inserts a constant subgraph of the same shape as the previous input node, and with 0 values as the initializing value for `ReadValue` nodes. (See the picture below.) Insertion of this subgraph can be disabled by passing the `false` value for the `use_const_initializer` argument.
+   **Use_const_initializer argument**: By default, the LowLatency2 transformation inserts a constant subgraph of the same shape as the previous input node, and with 0 values as the initializing value for `ReadValue` nodes. (See the picture below.) Insertion of this subgraph can be disabled by passing the `false` value for the `use_const_initializer` argument.
 
    ```cpp
    InferenceEngine::lowLatency2(cnnNetwork, false);
    ```
 
-   ![use_const_initializer_example](./img/llt2_use_const_initializer.png)
+       ![use_const_initializer_example](./img/llt2_use_const_initializer.png)
 
-   **State naming rule:**  A name of a state is a concatenation of names: original `TensorIterator` operation, parameter of the body, and additional suffix `variable_` + `id` (0-base indexing, new indexing for each `TensorIterator`). Use these rules to predict the name of the inserted state after the transformation is applied. For example:
+       **State naming rule**: A name of a state is a concatenation of names: original `TensorIterator` operation, parameter of the body, and additional suffix `variable_` + `id` (0-base indexing, new indexing for each `TensorIterator`). Use these rules to predict the name of the inserted state after the transformation is applied. For example:
 
    ```cpp
       // Precondition in ngraph::function.
@@ -311,9 +301,7 @@ After applying the transformation, the `ReadValue` operations can receive other 
       }
    ```
 
-4. Use state API. 
-
-   See the [OpenVINO state API](#openvino-state-api) and the [Example of stateful network inference](#example-of-stateful-network-inference) sections.
+4. Use state API. See the [OpenVINO state API](#openvino-state-api) and the [Example of stateful network inference](#example-of-stateful-network-inference) sections.
 
 ### Known Limitations
 1. Unable to execute the [Reshape](ShapeInference.md) feature to change the number iterations of `TensorIterator`/`Loop` layers to apply the transformation correctly.
