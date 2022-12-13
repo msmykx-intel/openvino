@@ -204,7 +204,7 @@ For more elaborate examples demonstrating how to work with networks with states,
 
 If the original framework does not have a special API for working with states, OpenVINO representation will not contain `Assign`/`ReadValue` layers after importing the model. For example, if the original ONNX model contains RNN operations, OpenVINO IR will contain [TensorIterator](../ops/infrastructure/TensorIterator_1.md) operations and the values will be obtained only after execution of the whole `TensorIterator` primitive. Intermediate values from each iteration will not be available. Working with these intermediate values of each iteration is enabled by special [LowLatency](lowlatency_deprecated.md) and [LowLatency2](lowlatency2.md) transformations, which also help receive these values with a low latency after each infer request.
 
-> **NOTE**: It is recommended to use LowLatency2, as LowLatency transformation has already been deprecated.
+> **WARNING**: It is recommended to use LowLatency2, as LowLatency transformation has already been deprecated.
 
 ### How to Get TensorIterator/Loop operations from Different Frameworks via Model Optimizer.
 
