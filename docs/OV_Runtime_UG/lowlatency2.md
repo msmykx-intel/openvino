@@ -1,6 +1,6 @@
 # The LowLatencу2 Transformation {#openvino_docs_OV_UG_lowlatency2}
 
-The LowLatency2 transformation changes the structure of the network containing [TensorIterator](../ops/infrastructure/TensorIterator_1.md) and [Loop](../ops/infrastructure/Loop_5.md) by adding the ability to work with the state, inserting the `Assign`/`ReadValue` layers as it is shown in the picture below.
+The LowLatency2 transformation changes the structure of the network containing [TensorIterator](../ops/infrastructure/TensorIterator_1.md) and [Loop](../ops/infrastructure/Loop_5.md) by adding the ability to work with the state, inserting the [Assign](../ops/infrastructure/Assign_3.md)/[ReadValue](../ops/infrastructure/ReadValue_3.md) layers as it is shown in the picture below.
 
 ## The Differences between the LowLatency and the LowLatency2:
 
@@ -12,7 +12,7 @@ The LowLatency2 transformation changes the structure of the network containing [
 
 ![applying_low_latency_2_example](./img/applying_low_latency_2.png)
 
-After applying the transformation, the `ReadValue` operations can receive other operations as an input, as shown in the picture above. These inputs should set the initial value for initialization of the `ReadValue` operations. However, such initialization is not supported in the current State API implementation. Input values are ignored and the initial values for the `ReadValue` operations are set to 0 unless otherwise specified by the user via [State API](#openvino-state-api).
+After applying the transformation, the `ReadValue` operations can receive other operations as an input, as shown in the picture above. These inputs should set the initial value for initialization of the `ReadValue` operations. However, such initialization is not supported in the current State API implementation. Input values are ignored and the initial values for the `ReadValue` operations are set to 0 unless otherwise specified by the user via [State API](./network_state_intro.md#openvino-state-api).
 
 ## Steps to Apply the LowLatency2 Transformation
 
@@ -79,7 +79,7 @@ After applying the transformation, the `ReadValue` operations can receive other 
       }
    ```
 
-4. Use state API. See the [OpenVINO state API](#openvino-state-api) and the [Example of stateful network inference](#example-of-stateful-network-inference) sections.
+4. Use state API. See the [OpenVINO state API](./network_state_intro.md#openvino-state-api) and the [Example of stateful network inference](./network_state_intro.md#example-of-stateful-network-inference) sections.
 
 ## Known Limitations
 1. Unable to execute the [Reshape](ShapeInference.md) feature to change the number iterations of `TensorIterator`/`Loop` layers to apply the transformation correctly.
