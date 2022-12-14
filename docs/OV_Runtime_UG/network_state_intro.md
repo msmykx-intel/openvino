@@ -180,7 +180,8 @@ In the following example, the `SinkVector` is used to create the `ngraph::Functi
     auto f = make_shared<Function>(ResultVector({res}), ParameterVector({arg}), SinkVector({assign}));
 ```
 
-## OpenVINO State API<a name="openvino-state-api"></a>
+@anchor openvino-state-api
+## OpenVINO State API
 
 Inference Engine has the `InferRequest::QueryState` method to get the list of states from a network and `IVariableState` interface to operate with states. Below is a brief description of methods and the example of how to use this interface.
 
@@ -189,7 +190,8 @@ Inference Engine has the `InferRequest::QueryState` method to get the list of st
 * `void SetState(Blob::Ptr newState)` - sets a new value for a state.
 * `Blob::CPtr GetState() const` - returns current value of state.
 
-## Example of Stateful Network Inference<a name="example-of-stateful-network-inference"></a>
+@anchor example-of-stateful-network-inference
+## Example of Stateful Network Inference
 
 Based on the IR from the previous section, the example below demonstrates inference of two independent sequences of data. A state should be reset between these sequences.
 

@@ -12,7 +12,7 @@ The LowLatency2 transformation changes the structure of the network containing [
 
 ![applying_low_latency_2_example](./img/applying_low_latency_2.png)
 
-After applying the transformation, the `ReadValue` operations can receive other operations as an input, as shown in the picture above. These inputs should set the initial value for initialization of the `ReadValue` operations. However, such initialization is not supported in the current State API implementation. Input values are ignored and the initial values for the `ReadValue` operations are set to 0 unless otherwise specified by the user via [State API](./network_state_intro.md#openvino-state-api).
+After applying the transformation, the `ReadValue` operations can receive other operations as an input, as shown in the picture above. These inputs should set the initial value for initialization of the `ReadValue` operations. However, such initialization is not supported in the current State API implementation. Input values are ignored and the initial values for the `ReadValue` operations are set to 0 unless otherwise specified by the user via [State API](@ref openvino-state-api).
 
 ## Steps to Apply the LowLatency2 Transformation
 
@@ -20,6 +20,7 @@ After applying the transformation, the `ReadValue` operations can receive other 
 
 	* [from IR or ONNX model](./integrate_with_your_application.md)
 	* [from ov::Model](../OV_Runtime_UG/model_representation.md)
+
 
 2. Change the number of iterations inside `TensorIterator`/`Loop` nodes in the network, using the [Reshape](ShapeInference.md) feature. 
 
@@ -79,7 +80,7 @@ After applying the transformation, the `ReadValue` operations can receive other 
       }
    ```
 
-4. Use state API. See the [OpenVINO state API](./network_state_intro.md#openvino-state-api) and the [Example of stateful network inference](./network_state_intro.md#example-of-stateful-network-inference) sections.
+4. Use state API. See the [OpenVINO state API](@ref openvino-state-api) and the [Example of stateful network inference](@ref example-of-stateful-network-inference) sections.
 
 ## Known Limitations
 1. Unable to execute the [Reshape](ShapeInference.md) feature to change the number iterations of `TensorIterator`/`Loop` layers to apply the transformation correctly.
