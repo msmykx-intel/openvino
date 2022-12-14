@@ -33,8 +33,7 @@ Below is the graph in both forms:
 
 @sphinxdirective
 
-.. image:: state_network_example.svg
-   :width: 50%
+.. image:: ./img/state_network_example.svg
 
 @endsphinxdirective
 
