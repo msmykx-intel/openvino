@@ -49,10 +49,9 @@ After applying the transformation, the `ReadValue` operations can receive other 
    ```cpp
    InferenceEngine::lowLatency2(cnnNetwork, false);
    ```
+   ![use_const_initializer_example](./img/llt2_use_const_initializer.png)
 
-	![use_const_initializer_example](./img/llt2_use_const_initializer.png)
-
-	**State naming rule**: A name of a state is a concatenation of names: original `TensorIterator` operation, parameter of the body, and additional suffix `variable_` + `id` (0-base indexing, new indexing for each `TensorIterator`). Use these rules to predict the name of the inserted state after the transformation is applied. For example:
+   **State naming rule**: A name of a state is a concatenation of names: original `TensorIterator` operation, parameter of the body, and additional suffix `variable_` + `id` (0-base indexing, new indexing for each `TensorIterator`). Use these rules to predict the name of the inserted state after the transformation is applied. For example:
 
    ```cpp
       // Precondition in ngraph::function.

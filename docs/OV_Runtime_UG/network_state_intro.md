@@ -31,7 +31,12 @@ To get a model with states ready for inference, convert a model from another fra
 
 Below is the graph in both forms:
 
-![state_network_example](./img/state_network_example.svg)
+@sphinxdirective
+
+.. image:: OV_Runtime_UG/img/state_network_example.svg
+   :width: 50 %
+
+@endsphinxdirective
 
 ### Example of IR with State
 
