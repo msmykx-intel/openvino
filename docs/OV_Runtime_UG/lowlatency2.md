@@ -50,33 +50,33 @@ After applying the transformation, the `ReadValue` operations can receive other 
    InferenceEngine::lowLatency2(cnnNetwork, false);
    ```
 
-       ![use_const_initializer_example](./img/llt2_use_const_initializer.png)
+   ![use_const_initializer_example](./img/llt2_use_const_initializer.png)
 
-       **State naming rule**: A name of a state is a concatenation of names: original `TensorIterator` operation, parameter of the body, and additional suffix `variable_` + `id` (0-base indexing, new indexing for each `TensorIterator`). Use these rules to predict the name of the inserted state after the transformation is applied. For example:
+   **State naming rule**: A name of a state is a concatenation of names: original `TensorIterator` operation, parameter of the body, and additional suffix `variable_` + `id` (0-base indexing, new indexing for each `TensorIterator`). Use these rules to predict the name of the inserted state after the transformation is applied. For example:
 
    ```cpp
-      // Precondition in ngraph::function.
-      // Created TensorIterator and Parameter in body of TensorIterator with names
-      std::string tensor_iterator_name = "TI_name"
-      std::string body_parameter_name = "param_name"
-      std::string idx = "0"; // it's a first variable in the network
+   // Precondition in ngraph::function.
+   // Created TensorIterator and Parameter in body of TensorIterator with names
+   std::string tensor_iterator_name = "TI_name"
+   std::string body_parameter_name = "param_name"
+   std::string idx = "0"; // it's a first variable in the network
 
-      // The State will be named "TI_name/param_name/variable_0"
-      auto state_name = tensor_iterator_name + "//" + body_parameter_name + "//" + "variable_" + idx;
+   // The State will be named "TI_name/param_name/variable_0"
+   auto state_name = tensor_iterator_name + "//" + body_parameter_name + "//" + "variable_" + idx;
 
-      InferenceEngine::CNNNetwork cnnNetwork = InferenceEngine::CNNNetwork{function};
-      InferenceEngine::lowLatency2(cnnNetwork);
+   InferenceEngine::CNNNetwork cnnNetwork = InferenceEngine::CNNNetwork{function};
+   InferenceEngine::lowLatency2(cnnNetwork);
 
-      InferenceEngine::ExecutableNetwork executableNetwork = core->LoadNetwork(/*cnnNetwork, targetDevice, configuration*/);
+   InferenceEngine::ExecutableNetwork executableNetwork = core->LoadNetwork(/*cnnNetwork, targetDevice, configuration*/);
 
-      // Try to find the Variable by name
-      auto states = executableNetwork.QueryState();
-      for (auto& state : states) {
-         auto name = state.GetName();
-         if (name == state_name) {
-            // some actions
-         }
+   // Try to find the Variable by name
+   auto states = executableNetwork.QueryState();
+   for (auto& state : states) {
+      auto name = state.GetName();
+      if (name == state_name) {
+         // some actions
       }
+   }
    ```
 
 4. Use state API. See the [OpenVINO state API](./network_state_intro.md#openvino-state-api) and the [Example of stateful network inference](./network_state_intro.md#example-of-stateful-network-inference) sections.
