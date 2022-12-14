@@ -24,8 +24,7 @@ and there is a way to reset a state when needed. A state can also be read or set
  
 ## OpenVINO State Representation
 
-OpenVINO contains the `Variable`, a special abstraction to represent a state in a network. There are two operations: [Assign](../ops/infrastructure/Assign_3.md) - to save a value in a state 
-and [ReadValue](../ops/infrastructure/ReadValue_3.md) - to read a value saved on previous iteration.
+OpenVINO contains the `Variable`, a special abstraction to represent a state in a network. There are two operations: [Assign](../ops/infrastructure/Assign_3.md) - to save a value in a state and [ReadValue](../ops/infrastructure/ReadValue_3.md) - to read a value saved on previous iteration.
  
 To get a model with states ready for inference, convert a model from another framework to OpenVINO IR with Model Optimizer or create an nGraph function. 
 (For more information, refer to the [Build OpenVINO Model section](../OV_Runtime_UG/model_representation.md)). 
@@ -181,7 +180,7 @@ In the following example, the `SinkVector` is used to create the `ngraph::Functi
     auto f = make_shared<Function>(ResultVector({res}), ParameterVector({arg}), SinkVector({assign}));
 ```
 
-## OpenVINO State API
+## OpenVINO State API<a name="openvino-state-api"></a>
 
 Inference Engine has the `InferRequest::QueryState` method to get the list of states from a network and `IVariableState` interface to operate with states. Below is a brief description of methods and the example of how to use this interface.
 
@@ -190,7 +189,7 @@ Inference Engine has the `InferRequest::QueryState` method to get the list of st
 * `void SetState(Blob::Ptr newState)` - sets a new value for a state.
 * `Blob::CPtr GetState() const` - returns current value of state.
 
-## Example of Stateful Network Inference
+## Example of Stateful Network Inference<a name="example-of-stateful-network-inference"></a>
 
 Based on the IR from the previous section, the example below demonstrates inference of two independent sequences of data. A state should be reset between these sequences.
 
@@ -204,7 +203,7 @@ For more elaborate examples demonstrating how to work with networks with states,
 
 If the original framework does not have a special API for working with states, OpenVINO representation will not contain `Assign`/`ReadValue` layers after importing the model. For example, if the original ONNX model contains RNN operations, OpenVINO IR will contain [TensorIterator](../ops/infrastructure/TensorIterator_1.md) operations and the values will be obtained only after execution of the whole `TensorIterator` primitive. Intermediate values from each iteration will not be available. Working with these intermediate values of each iteration is enabled by special [LowLatency](lowlatency_deprecated.md) and [LowLatency2](lowlatency2.md) transformations, which also help receive these values with a low latency after each infer request.
 
-> **WARNING**: It is recommended to use LowLatency2, as LowLatency transformation has already been deprecated.
+> **NOTE**: It is recommended to use LowLatency2, as LowLatency transformation has already been deprecated.
 
 ### How to Get TensorIterator/Loop operations from Different Frameworks via Model Optimizer.
 

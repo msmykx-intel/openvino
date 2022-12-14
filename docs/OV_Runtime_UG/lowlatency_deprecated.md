@@ -4,7 +4,7 @@ The deprecated LowLatency transformation changes the structure of the network co
 
 ![applying_low_latency_example](./img/applying_low_latency.png)
 
-After applying the transformation, `ReadValue` operations can receive other operations as an input, as shown in the picture above. These inputs should set the initial value for initialization of `ReadValue` operations. However, such initialization is not supported in the current State API implementation. Input values are ignored and the initial values for the `ReadValue` operations are set to 0 unless otherwise specified by the user via State API.
+After applying the transformation, `ReadValue` operations can receive other operations as an input, as shown in the picture above. These inputs should set the initial value for initialization of `ReadValue` operations. However, such initialization is not supported in the current State API implementation. Input values are ignored and the initial values for the `ReadValue` operations are set to 0 unless otherwise specified by the user via [State API](./network_state_intro.md#openvino-state-api).
 
 ## Steps to Apply LowLatency Transformation
 
