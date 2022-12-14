@@ -8,16 +8,15 @@ The LowLatency2 transformation changes the structure of the network containing [
 * Support for `TensorIterator` and `Loop` operations with multiple iterations inside. The `TensorIterator`/`Loop` will not be unrolled in this case.
 * The "Parameters connected directly to ReadValues" limitation is resolved. To apply the previous version of the transformation in this case, additional manual manipulations were required. Now, the case is processed automatically.
 
-## Example of Applying the LowLatency2 Transformation:<a name="example-of-applying-lowlatency2-transformation"></a>
+## Example of Applying the Transformation:<a name="example-of-applying-lowlatency2-transformation"></a>
 
 ![applying_low_latency_2_example](./img/applying_low_latency_2.png)
 
 After applying the transformation, the `ReadValue` operations can receive other operations as an input, as shown in the picture above. These inputs should set the initial value for initialization of the `ReadValue` operations. However, such initialization is not supported in the current State API implementation. Input values are ignored and the initial values for the `ReadValue` operations are set to 0 unless otherwise specified by the user via [State API](@ref openvino-state-api).
 
-## Steps to Apply the LowLatency2 Transformation
+## Steps to Apply LowLatency2
 
 1. Get CNNNetwork. Either way is acceptable:
-
 	* [from IR or ONNX model](./integrate_with_your_application.md)
 	* [from ov::Model](../OV_Runtime_UG/model_representation.md)
 
@@ -51,9 +50,9 @@ After applying the transformation, the `ReadValue` operations can receive other 
    InferenceEngine::lowLatency2(cnnNetwork, false);
    ```
 
-      ![use_const_initializer_example](./img/llt2_use_const_initializer.png)
-   
-      **State naming rule**: A name of a state is a concatenation of names: original `TensorIterator` operation, parameter of the body, and additional suffix `variable_` + `id` (0-base indexing, new indexing for each `TensorIterator`). Use these rules to predict the name of the inserted state after the transformation is applied. For example:
+	![use_const_initializer_example](./img/llt2_use_const_initializer.png)
+
+	**State naming rule**: A name of a state is a concatenation of names: original `TensorIterator` operation, parameter of the body, and additional suffix `variable_` + `id` (0-base indexing, new indexing for each `TensorIterator`). Use these rules to predict the name of the inserted state after the transformation is applied. For example:
 
    ```cpp
       // Precondition in ngraph::function.
