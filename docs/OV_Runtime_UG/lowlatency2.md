@@ -79,6 +79,7 @@ After applying the transformation, the `ReadValue` operations can receive other 
       }
    ```
 
+
 4. Use state API. See the [OpenVINO state API](@ref openvino-state-api) and the [Example of stateful network inference](@ref example-of-stateful-network-inference) sections.
 
 ## Known Limitations
