@@ -33,7 +33,7 @@ Below is the graph in both forms:
 
 @sphinxdirective
 
-.. image:: ./OV_Runtime_UG/img/state_network_example.svg
+.. image:: img/state_network_example.svg
 
 @endsphinxdirective
 
