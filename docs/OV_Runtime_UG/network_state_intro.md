@@ -34,6 +34,7 @@ Below is the graph in both forms:
 @sphinxdirective
 
 .. image:: _static/images/state_network_example.svg
+   :scale: 50 %
 
 @endsphinxdirective
 
