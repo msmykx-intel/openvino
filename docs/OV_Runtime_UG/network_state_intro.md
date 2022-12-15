@@ -212,7 +212,9 @@ If the original framework does not have a special API for working with states, O
 
 > **NOTE**: It is recommended to use LowLatency2, as LowLatency transformation has already been deprecated.
 
-### How to Get TensorIterator/Loop operations from Different Frameworks via Model Optimizer.
+### TensorIterator/Loop operations
+
+You can get the TensorIterator/Loop operations from different frameworks via Model Optimizer.
 
 * **ONNX and frameworks supported via ONNX format** - `LSTM`, `RNN`, and `GRU` original layers are converted to the `TensorIterator` operation. The `TensorIterator` 
 body contains `LSTM`/`RNN`/`GRU Cell`. The `Peepholes` and `InputForget` modifications are not supported, while the `sequence_lengths` optional input is.
