@@ -52,7 +52,7 @@ Refer to the [Using Shape Inference](../../../../OV_Runtime_UG/ShapeInference.md
 The second is that the frozen model still has two variables: `previous_state_c` and `previous_state_h`, figure
 with the frozen *.pb model is below. It means that the model keeps training these variables at each inference.
 
-![DeepSpeech model view](../../../img/DeepSpeech-0.8.2.png)
+![DeepSpeech model view](../../../img/DeepSpeech-0.8.2.svg)
 
 At the first inference, the variables are initialized with zero tensors. After execution, the results of the `BlockLSTM'
 are assigned to cell state and hidden state, which are these two variables.
