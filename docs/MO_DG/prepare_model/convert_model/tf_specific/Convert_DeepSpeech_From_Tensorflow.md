@@ -56,7 +56,7 @@ with the frozen *.pb model is below. It means that the model keeps training thes
 @sphinxdirective
 
 .. image:: _static/images/DeepSpeech-0.8.2.svg
-   :scale: 80 %
+   :scale: 70 %
 
 @endsphinxdirective
 
