@@ -64,7 +64,14 @@ for a better explanation. Also, for more information on how to use ports and con
 ## Model Conversion Pipeline <a name="model-conversion-pipeline"></a>
 A model conversion pipeline can be represented with the following diagram:
 
-![Model Conversion pipeline](../../../img/MO_conversion_pipeline.svg)
+
+@sphinxdirective
+
+.. image:: _static/images/MO_conversion_pipeline.svg
+   :scale: 120 %
+
+@endsphinxdirective
+
 
 Each conversion step is reviewed in details below.
 
