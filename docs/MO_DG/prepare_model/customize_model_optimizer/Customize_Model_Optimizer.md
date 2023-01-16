@@ -64,7 +64,7 @@ for a better explanation. Also, for more information on how to use ports and con
 ## Model Conversion Pipeline <a name="model-conversion-pipeline"></a>
 A model conversion pipeline can be represented with the following diagram:
 
-![Model Conversion pipeline](../../../img/MO_conversion_pipeline.png)
+![Model Conversion pipeline](../../../img/MO_conversion_pipeline.svg)
 
 Each conversion step is reviewed in details below.
 
@@ -80,7 +80,7 @@ is a separate loader for each supported framework. These loaders are implemented
 
 The result of a model loading step is a `Graph` object, which can be depicted like in the following example:
 
-![Graph After Load](../../../img/MO_graph_after_loader.png)
+![Graph After Load](../../../img/MO_graph_after_loader.svg)
 
 Model Optimizer loader saves an operation instance framework description (usually it is a Protobuf message) into a node
 attribute usually with a name `pb` for each operation of an input model. It is important that this is a
@@ -117,7 +117,7 @@ The extractors execution order is the following:
 
 The result of operations attributes extracting step can be depicted like in the following example:
 
-![Graph After Attributes Extraction](../../../img/MO_graph_after_extractors.png)
+![Graph After Attributes Extraction](../../../img/MO_graph_after_extractors.svg)
 
 The only difference in the graph from the previous step is that nodes contain dictionary with extracted attributes and
 operation-specific attributes needed for Model Optimizer. However, starting from this step, Model Optimizer does not
@@ -188,7 +188,7 @@ Model Optimizer does not have value propagation implementation for the operation
 
 Before running partial inference, the graph can be depicted like in the following example:
 
-![Graph Before Partial Inference](../../../img/MO_graph_before_partial_inference.png)
+![Graph Before Partial Inference](../../../img/MO_graph_before_partial_inference.svg)
 
 The difference in a graph structure with a graph during the front phase is not only in the data nodes, but also in the
 edge attributes. Note that an `out` attribute is specified for edges **from operation** nodes only, while an `in`
@@ -375,7 +375,7 @@ port with `idx = 2` corresponds to the incoming edge of a node with an attribute
 Consider the example of a graph part with 4 operation nodes "Op1", "Op2", "Op3", and "Op4" and a number of data nodes
 depicted with light green boxes.
 
-![Ports example 1](../../../img/MO_ports_example_1.png)
+![Ports example 1](../../../img/MO_ports_example_1.svg)
 
 Operation nodes have input ports (yellow squares) and output ports (light purple squares). Input port may not be
 connected. For example, the input "port 2" of node "Op1" does not have incoming edge, while output port always has an
@@ -409,7 +409,7 @@ op4.in_port(1).disconnect()
 op3.out_port(0).connect(op4.in_port(1))
 ```
 
-![Ports example 2](../../../img/MO_ports_example_2.png)
+![Ports example 2](../../../img/MO_ports_example_2.svg)
 
 > **NOTE**: For a full list of available methods, refer to the `Node` class implementation in the `mo/graph/graph.py` and `Port` class implementation in the `mo/graph/port.py` files.
 
@@ -436,7 +436,7 @@ example, the function call `op3.out_port(0).get_connection().set_source(op1.out_
 consuming data from port `op3.out_port(0)` to `op1.out_port(0)`. The transformed graph from the sample above is depicted
 below:
 
-![Connection example 1](../../../img/MO_connection_example_1.png)
+![Connection example 1](../../../img/MO_connection_example_1.svg)
 
 Another example is the `connection.set_destination(dest_port)` method. It disconnects `dest_port` and all input ports to which
 the connection is currently connected and connects the connection source port to `dest_port`.
@@ -720,7 +720,7 @@ order. To execute the transformation during a proper model conversion phase, Mod
 anchor transformations that do nothing. All transformations are ordered with respect to these anchor transformations.
 The diagram below shows anchor transformations, some of built-in transformations and dependencies between them:
 
-![Transformations Graph](../../../img/MO_transformations_graph.png)
+![Transformations Graph](../../../img/MO_transformations_graph.svg)
 
 User-defined transformations are executed after the corresponding `Start` and before the corresponding `Finish` anchor
 transformations by default (if `run_before()` and `run_after()` methods have not been overridden).
