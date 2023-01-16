@@ -65,10 +65,10 @@ for a better explanation. Also, for more information on how to use ports and con
 A model conversion pipeline can be represented with the following diagram:
 
 
-@sphinxdirective
+@sphinxdirective`
 
 .. image:: _static/images/MO_conversion_pipeline.svg
-   :scale: 110 %
+   :scale: 100 %
 
 @endsphinxdirective
 
@@ -195,7 +195,14 @@ Model Optimizer does not have value propagation implementation for the operation
 
 Before running partial inference, the graph can be depicted like in the following example:
 
-![Graph Before Partial Inference](../../../img/MO_graph_before_partial_inference.svg)
+
+@sphinxdirective`
+
+.. image:: _static/images/MO_graph_before_partial_inference.svg
+   :scale: 110 %
+
+@endsphinxdirective
+
 
 The difference in a graph structure with a graph during the front phase is not only in the data nodes, but also in the
 edge attributes. Note that an `out` attribute is specified for edges **from operation** nodes only, while an `in`
@@ -382,7 +389,14 @@ port with `idx = 2` corresponds to the incoming edge of a node with an attribute
 Consider the example of a graph part with 4 operation nodes "Op1", "Op2", "Op3", and "Op4" and a number of data nodes
 depicted with light green boxes.
 
-![Ports example 1](../../../img/MO_ports_example_1.svg)
+
+@sphinxdirective`
+
+.. image:: _static/images/MO_ports_example_1.svg
+   :scale: 80 %
+
+@endsphinxdirective
+
 
 Operation nodes have input ports (yellow squares) and output ports (light purple squares). Input port may not be
 connected. For example, the input "port 2" of node "Op1" does not have incoming edge, while output port always has an
@@ -416,7 +430,15 @@ op4.in_port(1).disconnect()
 op3.out_port(0).connect(op4.in_port(1))
 ```
 
-![Ports example 2](../../../img/MO_ports_example_2.svg)
+
+
+@sphinxdirective`
+
+.. image:: _static/images/MO_ports_example_2.svg
+   :scale: 80 %
+
+@endsphinxdirective
+
 
 > **NOTE**: For a full list of available methods, refer to the `Node` class implementation in the `mo/graph/graph.py` and `Port` class implementation in the `mo/graph/port.py` files.
 
@@ -443,7 +465,14 @@ example, the function call `op3.out_port(0).get_connection().set_source(op1.out_
 consuming data from port `op3.out_port(0)` to `op1.out_port(0)`. The transformed graph from the sample above is depicted
 below:
 
-![Connection example 1](../../../img/MO_connection_example_1.svg)
+
+@sphinxdirective`
+
+.. image:: _static/images/MO_connection_example_1.svg
+   :scale: 80 %
+
+@endsphinxdirective
+
 
 Another example is the `connection.set_destination(dest_port)` method. It disconnects `dest_port` and all input ports to which
 the connection is currently connected and connects the connection source port to `dest_port`.
