@@ -68,7 +68,6 @@ A model conversion pipeline can be represented with the following diagram:
 @sphinxdirective`
 
 .. image:: _static/images/MO_conversion_pipeline.svg
-   :scale: 100 %
 
 @endsphinxdirective
 
@@ -199,7 +198,6 @@ Before running partial inference, the graph can be depicted like in the followin
 @sphinxdirective`
 
 .. image:: _static/images/MO_graph_before_partial_inference.svg
-   :scale: 110 %
 
 @endsphinxdirective
 
@@ -394,6 +392,7 @@ depicted with light green boxes.
 
 .. image:: _static/images/MO_ports_example_1.svg
    :scale: 80 %
+   :align: center
 
 @endsphinxdirective
 
@@ -436,6 +435,7 @@ op3.out_port(0).connect(op4.in_port(1))
 
 .. image:: _static/images/MO_ports_example_2.svg
    :scale: 80 %
+   :align: center
 
 @endsphinxdirective
 
@@ -470,6 +470,7 @@ below:
 
 .. image:: _static/images/MO_connection_example_1.svg
    :scale: 80 %
+   :align: center
 
 @endsphinxdirective
 
