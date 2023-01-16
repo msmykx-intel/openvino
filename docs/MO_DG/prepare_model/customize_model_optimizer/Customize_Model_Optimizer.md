@@ -68,7 +68,7 @@ A model conversion pipeline can be represented with the following diagram:
 @sphinxdirective
 
 .. image:: _static/images/MO_conversion_pipeline.svg
-   :scale: 120 %
+   :scale: 110 %
 
 @endsphinxdirective
 
