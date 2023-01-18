@@ -109,7 +109,7 @@ The next step is to parse framework-dependent operation representation saved in 
 attributes with the operation specific attributes. There are three options to do this.
 
 1.  The extractor extension approach. This is a recommended way to extract attributes for an operation and it is
-explained in details in the [Operation Extractor](#extension-extractor) section.
+explained in details in the [Operation Extractor](Model_Optimizer_Extractor.md) article.
 
 2.  The legacy approach with a built-in extractor. The `mo/front/<FRAMEWORK>/extractor.py` file (for example, the one
 for Caffe) defines a dictionary with extractors for specific operation types. A key in the dictionary is a type of an
@@ -217,7 +217,7 @@ each node in the graph, according to the topological order. Each node of the gra
 with a shape inference function, which is a function with one parameter – an instance of the `Node` class. The `infer`
 attribute is usually set in the operation extractor or when a node is added in some transformation using the Model
 Optimizer operation class inherited from the `mo.pos.Op` class. For more information on how to specify a shape inference function,
-refer to the [Model Optimizer Operation](#extension-operation) and [Operation Extractor](#operation-extractor) sections.
+refer to the [Model Optimizer Operation](Model_Optimizer_Operation.md) and [Operation Extractor](Model_Optimizer_Extractor.md) sections.
 
 A shape inference function should calculate an operation (node) output shape(s) based on input shape(s) and operation
 (node) attribute(s) and update `shape` and optionally `value` attributes of the corresponding data node(s). A simplified
@@ -261,7 +261,7 @@ attribute for all newly added operations. It is highly recommended to use API de
 [Graph Traversal and Modification Using Ports and Connections](@ref graph-ports-and-conneсtions) because modification of a graph using this API causes automatic re-inference of affected nodes as well as necessary data nodes creation.
 
 More information on how to develop middle transformations and dedicated API description is provided in the
-[Middle Phase Transformations](#middle-phase-transformations).
+[Middle Phase Transformations](@ref mo-middle-phase-transformations).
 
 ### NHWC to NCHW Layout Change <a name="layout-change"></a>
 
@@ -302,7 +302,7 @@ A graph structure during the back phase is the same as during the middle phase. 
 and back transformations.
 
 More information on how to develop back transformations and dedicated API description is provided in the
-[Back Phase Transformations](#back-phase-transformations).
+[Back Phase Transformations](@ref mo-back-phase-transformations).
 
 ### Intermediate Representation Emitting <a name="ir-emitting"></a>
 The last phase of a model conversion is the Intermediate Representation emitting. Model Optimizer performs the following
@@ -321,7 +321,7 @@ values starting from 0.
 uniformly for all operations regardless of their type. A list of attributes to be saved to the `.xml` file is defined
 with the `backend_attrs()` or `supported_attrs()` of the `Op` class used for a graph node instantiation. For more
 information on how the operation attributes are saved to XML, refer to the function `prepare_emit_ir()` in
-the `mo/pipeline/common.py` file and [Model Optimizer Operation](#extension-operation) section.
+the `mo/pipeline/common.py` file and [Model Optimizer Operation](Model_Optimizer_Operation.md) article.
 
 ## Graph Traversal and Modification Using Ports and Connections <a name="ports-conneсtions"></a>
 @anchor graph-ports-and-conneсtions

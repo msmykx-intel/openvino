@@ -510,6 +510,7 @@ class YoloRegionAddon(FrontReplacementFromConfigFileGeneral):
 The configuration file has only 3 parameters: `id` identifier of the transformation , `match_kind` (which should be equal
 to `general`) and the `custom_attributes` dictionary with custom attributes accessible in the transformation.
 
+@anchor mo-middle-phase-transformations
 ## Middle Phase Transformations <a name="middle-phase-transformations"></a>
 There are two types of middle phase transformations:
 
@@ -536,6 +537,7 @@ transformation entry function name is `find_and_replace_pattern(self, graph: Gra
 
 For the example of this transformation, refer to the `extensions/middle/CheckForCycle.py` file.
 
+@anchor mo-back-phase-transformations
 ## Back Phase Transformations <a name="back-phase-transformations"></a>
 There are two types of back phase transformations:
 
