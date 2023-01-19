@@ -6,8 +6,8 @@
    :maxdepth: 1
    :hidden:
 
-   openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Extending_Model_Optimizer_With_Caffe_Python_Layers
    openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Model_Optimizer_Extensions
+   openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Extending_Model_Optimizer_With_Caffe_Python_Layers
 
 @endsphinxdirective
 
