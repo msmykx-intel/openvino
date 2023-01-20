@@ -40,6 +40,7 @@ transformations by default (if `run_before()` and `run_after()` methods have not
 > **NOTE**: The `PreMiddleStart` and `PostMiddleStart` anchors were introduced due to historical reasons to refactor
 > the Model Optimizer pipeline, which initially had a hardcoded order of transformations.
 
+@anchor mo-front-phase-transformations
 ## Front Phase Transformations <a name="front-phase-transformations"></a>
 There are several types of a front phase transformation:
 
