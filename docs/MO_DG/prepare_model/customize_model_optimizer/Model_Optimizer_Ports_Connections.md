@@ -1,4 +1,4 @@
-# Graph Traversal and Modification Using Ports and Connections {openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Customize_Model_Optimizer_Model_Optimizer_Ports_Connections}
+# Graph Traversal and Modification Using Ports and Connections {#openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Customize_Model_Optimizer_Model_Optimizer_Ports_Connections}
 
 There are three APIs for a graph traversal and transformation used in the Model Optimizer:
 1. The API provided with the `networkx` Python library for the `networkx.MultiDiGraph` class, which is the base class for
