@@ -12,9 +12,7 @@
 
 @endsphinxdirective
 
-<a name="model-optimizer-extensibility"></a>Model Optimizer extensibility mechanism enables support of new operations and custom transformations to generate the optimized intermediate representation (IR) as described in the
-[Deep Learning Network Intermediate Representation and Operation Sets in OpenVINO™](../../IR_and_opsets.md). This
-mechanism is a core part of Model Optimizer, as a huge set of examples showing how to add custom logic to support your model.
+Model Optimizer extensibility mechanism enables support of new operations and custom transformations to generate the optimized intermediate representation (IR) as described [here](../../IR_and_opsets.md). This mechanism is a core part of Model Optimizer, as a huge set of examples showing how to add custom logic to support your model.
 
 There are several cases when the customization is needed:
 
@@ -22,7 +20,7 @@ There are several cases when the customization is needed:
 combination of supported operations. In this case, a custom transformation should be implemented to replace unsupported
 operation(s) with supported ones.
 * A model contains a sub-graph of operations that can be replaced with a smaller number of operations to get better
-performance. This example corresponds to so-called *fusing transformations*, for example, replacing a sub-graph performing the calculation \f$x / (1.0 + e^{-(beta * x)})\f$ with a single operation of type
+performance. This example corresponds to so-called *fusing transformations* (e.g., replacing a sub-graph performing the calculation \f$x / (1.0 + e^{-(beta * x)})\f$ with a single operation of type)
 [Swish](../../../ops/activation/Swish_4.md).
 * A model contains a custom framework operation (the operation that is not a part of an official operation set of the
 framework) that was developed using the framework extensibility mechanism. In this case, Model Optimizer should know
@@ -62,7 +60,7 @@ edge attributes if needed. Meanwhile, most manipulations with nodes connections 
 is strongly not recommended.
 
 Further details and examples related to a model representation in memory are provided in the sections below, in a context
-for a better explanation. Also, for more information on how to use ports and connections, refer to the [Graph Traversal and Modification Using Ports and Connections](Model_Optimizer_Ports_Connections.md) section.
+for a better explanation. For more information on how to use ports and connections, refer to the [Graph Traversal and Modification Using Ports and Connections](Model_Optimizer_Ports_Connections.md) article.
 
 @anchor mo-model-conversion-pipeline
 ## Model Conversion Pipeline <a name="model-conversion-pipeline"></a>
@@ -86,7 +84,7 @@ is a separate loader for each supported framework. These loaders are implemented
 
 > **NOTE**: Model Optimizer uses a special parser for Caffe models built on top of the `caffe.proto` file. In the case of a
 > model loading failure, Model Optimizer throws an error and requests preparation of the parser that can read the model.
-> For more information on how to prepare the custom Caffe parser, refer to the [Model Optimizer Frequently Asked Questions #1](../Model_Optimizer_FAQ.md).
+> For more information on how to prepare the custom Caffe parser, refer to the [question #1](@ref mo-question-1) in the [Model Optimizer FAQ](../Model_Optimizer_FAQ.md).
 
 The result of a model loading step is a `Graph` object, which can be depicted like in the following example:
 
@@ -98,9 +96,9 @@ attribute usually with a name `pb` for each operation of an input model. It is i
 [Convolution](../../../ops/convolution/Convolution_1.md) may be represented differently in, for example, Caffe and
 TensorFlow frameworks but performs the same calculations from a mathematical point of view.
 
-In the example above, the "Operation 2" has one input and two outputs. The tensor produced from the output "port 0" is
-consumed with the "Operation 5" (the input "port 0") and "Operation 3" (the input "port 1"). The tensor produced from the
-output "port 1" is consumed with the "Operation 4" (the input "port 0").
+In the image above, the **Operation 2** has one input and two outputs. The tensor produced from the output **port 0** is
+consumed with the **Operation 5** (the input **port 0**) and **Operation 3** (the input **port 1**). The tensor produced from the
+output **port 1** is consumed with the **Operation 4** (the input **port 0**).
 
 Each edge has two attributes `in` and `out` containing the input port number of the consumer node and the output port
 number of the producer node. These attributes describe the fact that nodes are operations consuming some input tensors
@@ -111,8 +109,7 @@ they do not contain required information about the operation they perform.
 The next step is to parse framework-dependent operation representation saved in a node attribute and update the node
 attributes with the operation specific attributes. There are three options to do this.
 
-1.  The extractor extension approach. This is a recommended way to extract attributes for an operation and it is
-explained in details in the [Operation Extractor](Model_Optimizer_Extractor.md) article.
+1.  The extractor extension approach (recommended way to extract attributes for an operation). Explained in details in the [Operation Extractor](Model_Optimizer_Extractor.md) article.
 
 2.  The legacy approach with a built-in extractor. The `mo/front/<FRAMEWORK>/extractor.py` file (for example, the one
 for Caffe) defines a dictionary with extractors for specific operation types. A key in the dictionary is a type of an
@@ -134,7 +131,7 @@ operation-specific attributes needed for Model Optimizer. However, starting from
 need the original representation of the operation/model and uses just Model Optimizer representation (there are some
 peculiar cases in which Model Optimizer still uses the `pb` attribute, covered in this
 article partially). A detailed list of common node attributes and their values is provided below in the
-[Model Optimizer Operation](Model_Optimizer_Operation.md) section.
+[Model Optimizer Operation](Model_Optimizer_Operation.md) article.
 
 ### Front Phase <a name="front-phase"></a>
 For legacy reasons, you must specify shapes for all not fully-defined inputs of the model. In contrast, other
@@ -166,7 +163,7 @@ refer to the [Reshape](../../../ops/shape/Reshape_1.md) specification page).
 It is highly recommended to write shape-agnostic transformations to avoid model reshape-ability issues. For more information related to the reshaping of a model, refer to the [Using Shape Inference](../../../OV_Runtime_UG/ShapeInference.md) guide.
 
 More information on how to develop front phase transformations and dedicated API description is provided in the
-[Front Phase Transformations](@ref mo-front-phase-transformations) section.
+[Front Phase Transformations](@ref mo-front-phase-transformations).
 
 @anchor mo-partial-inference
 ### Partial Inference <a name="partial-inference"></a>
@@ -221,7 +218,7 @@ each node in the graph, according to the topological order. Each node of the gra
 with a shape inference function, which is a function with one parameter – an instance of the `Node` class. The `infer`
 attribute is usually set in the operation extractor or when a node is added in some transformation using the Model
 Optimizer operation class inherited from the `mo.pos.Op` class. For more information on how to specify a shape inference function,
-refer to the [Model Optimizer Operation](Model_Optimizer_Operation.md) and [Operation Extractor](Model_Optimizer_Extractor.md) sections.
+refer to the [Model Optimizer Operation](Model_Optimizer_Operation.md) and [Operation Extractor](Model_Optimizer_Extractor.md) articles.
 
 A shape inference function should calculate an operation (node) output shape(s) based on input shape(s) and operation
 (node) attribute(s) and update `shape` and optionally `value` attributes of the corresponding data node(s). A simplified
@@ -250,7 +247,7 @@ Methods `in_port()` and `output_port()` of the `Node` class are used to get and 
 how to use them, refer to the [Graph Traversal and Modification Using Ports and Connections](Model_Optimizer_Ports_Connections.md) section.
 
 > **NOTE**: A shape inference function should perform output shape calculation in the original model layout. For
-> example, OpenVINO&trade; supports Convolution operations in NCHW layout only but TensorFlow supports NHWC layout as
+> example, OpenVINO supports Convolution operations in NCHW layout only but TensorFlow supports NHWC layout as
 > well. Model Optimizer shape inference function calculates output shapes for NHWC Convolutions in NHWC layout and only
 > during the layout change phase the shape is converted to NCHW.
 
@@ -272,7 +269,6 @@ More information on how to develop middle transformations and dedicated API desc
 There are several middle transformations responsible for changing model layout from NHWC to NCHW. These transformations are triggered by default for TensorFlow models as TensorFlow supports Convolution operations in the NHWC layout.
 
 This layout change is disabled automatically if the model does not have operations that OpenVINO&trade needs to execute in the NCHW layout, for example, Convolutions in NHWC layout.
-
 
 For more details on how it works, refer to the source code of the transformations mentioned in the below summary of the process: 
 
@@ -327,7 +323,7 @@ with the `backend_attrs()` or `supported_attrs()` of the `Op` class used for a g
 information on how the operation attributes are saved to XML, refer to the function `prepare_emit_ir()` in
 the `mo/pipeline/common.py` file and [Model Optimizer Operation](Model_Optimizer_Operation.md) article.
 
-## See Also <a name="see-also"></a>
+## Additional Resources
 * [Deep Learning Network Intermediate Representation and Operation Sets in OpenVINO™](../../IR_and_opsets.md)
 * [Converting a Model to Intermediate Representation (IR)](../convert_model/Converting_Model.md)
 * [OpenVINO Model Representation](../../../OV_Runtime_UG/model_representation.md)
