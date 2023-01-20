@@ -34,6 +34,7 @@ going into details of the Model Optimizer extensibility mechanism.
 > **NOTE**: All paths in this article are provided relatively to the Model Optimizer installation directory if not
 > stated otherwise.
 
+@anchor mo-model-representation-in-memory
 ## Model Representation in Memory <a name="model-representation-in-memory"></a>
 The model can be represented as a directed graph, where nodes are operations and edges correspond to data passing from a
 producer operation (node) to a consumer operation (node).
@@ -45,7 +46,7 @@ library. It provides many convenient methods to traverse and modify the graph. F
 Model Optimizer keeps all necessary information about the operation in node attributes. Model Optimizer uses the `mo.graph.graph.Node` class defined in the  `mo/graph/graph.py` file, which is a wrapper on top of a `networkx` node attributes
 dictionary, and provides many convenient methods to work with the node. For example, the node `my_node` attribute with a
 name `my_attr` can be retrieved from the node with the following code `my_node.my_attr`, which is equivalent to obtaining
-attribute with name `my_attr` in the `graph.node['my_node']` dictionary. For the class implementation details, refer to the `mo/graph/graph.py` file.
+attribute with name `my_attr` in the `graph.node[my_node]` dictionary. For the class implementation details, refer to the `mo/graph/graph.py` file.
 
 An operation may have several inputs and outputs. For example, operation [Split](../../../ops/movement/Split_1.md) has
 two inputs: data to split and axis to split along, and variable number of outputs depending on a value of attribute
@@ -63,6 +64,7 @@ is strongly not recommended.
 Further details and examples related to a model representation in memory are provided in the sections below, in a context
 for a better explanation. Also, for more information on how to use ports and connections, refer to the [Graph Traversal and Modification Using Ports and Connections](Model_Optimizer_Ports_Connections.md) section.
 
+@anchor mo-model-conversion-pipeline
 ## Model Conversion Pipeline <a name="model-conversion-pipeline"></a>
 A model conversion pipeline can be represented with the following diagram:
 
@@ -166,6 +168,7 @@ It is highly recommended to write shape-agnostic transformations to avoid model 
 More information on how to develop front phase transformations and dedicated API description is provided in the
 [Front Phase Transformations](@ref mo-front-phase-transformations) section.
 
+@anchor mo-partial-inference
 ### Partial Inference <a name="partial-inference"></a>
 Model Optimizer performs a partial inference of a model during model conversion. This procedure includes output shapes
 calculation of all operations in a model and constant folding (value calculation for constant sub-graphs). The constant
@@ -253,7 +256,7 @@ how to use them, refer to the [Graph Traversal and Modification Using Ports and 
 
 > **NOTE**: There is a legacy approach to read data node attribute, like `input_shape = op_node.in_node(0).shape` and
 > modify data nodes attributes, like `op_node.out_node(0).shape = some_value`. This approach is still used in the Model
-> Optimizer code but is not recommended. Instead, use the approach described in the [Ports](#intro-ports).
+> Optimizer code but is not recommended. Instead, use the approach described in the [Ports](@ref mo-intro-ports).
 
 ### Middle Phase <a name="middle-phase"></a>
 The middle phase starts after partial inference. At this phase, a graph contains data nodes and output shapes of all

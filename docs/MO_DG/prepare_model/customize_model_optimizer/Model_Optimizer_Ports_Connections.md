@@ -2,7 +2,7 @@
 
 There are three APIs for a graph traversal and transformation used in the Model Optimizer:
 1. The API provided with the `networkx` Python library for the `networkx.MultiDiGraph` class, which is the base class for
-the `mo.graph.graph.Graph` object. For more details, refer to the [Model Representation in Memory](#model-representation-in-memory) section. 
+the `mo.graph.graph.Graph` object. For more details, refer to the [Model Representation in Memory](@ref mo-model-representation-in-memory) section. 
 For example, the following methods belong to this API level: `graph.add_edges_from([list])`,
 `graph.add_node(x, attrs)`, `graph.out_edges(node_id)` etc where `graph` is a an instance of the `networkx.MultiDiGraph`
 class. **This is the lowest-level API. Avoid using it in the Model Optimizer transformations**.
@@ -22,6 +22,7 @@ the graph contains data nodes), provides API to perform safe and predictable gra
 semantic to the graph. This is achieved with introduction of concepts of ports and connections. This article is
 dedicated to the Model Optimizer Graph API only and does not cover other two non-recommended APIs.
 
+@anchor mo-intro-ports
 ## Ports <a name="intro-ports"></a>
 An operation semantic describes how many inputs and outputs the operation has. For example, 
 [Parameter](../../../ops/infrastructure/Parameter_1.md) and [Const](../../../ops/infrastructure/Constant_1.md) operations have no
@@ -42,8 +43,8 @@ For example, `in_port.data.get_shape()` returns an input shape of a tensor conne
 (`out_port.type == 'out'`).
 
 > **NOTE**: Functions `get_shape()` and `get_value()` return `None` until the partial inference phase.  For more information 
-> about model conversion phases, refer to the [Model Conversion Pipeline](#model-conversion-pipeline) section. For information 
-> about partial inference phase, see the [Partial Inference](#partial-inference) section.
+> about model conversion phases, refer to the [Model Conversion Pipeline](@ref mo-model-conversion-pipeline) section. For information 
+> about partial inference phase, see the [Partial Inference](@ref mo-partial-inference) section.
 
 There are several methods of the `Node` class to get the instance of a corresponding port:
 * `in_port(x)` and `out_port(x)` to get the input/output port with number `x`.

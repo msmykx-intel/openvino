@@ -22,7 +22,7 @@ layer {
 
 This article describes only a procedure on how to extract operator attributes in Model Optimizer. The rest of the
 operation enabling pipeline and information on how to support other Caffe operations (written in C++) is described in
-the [Customize_Model_Optimizer](Customize_Model_Optimizer.md) guide.
+the [Customize Model Optimizer](Customize_Model_Optimizer.md) guide.
 
 ## Writing Extractor for Caffe Python Layer
 Custom Caffe Python layers have an attribute `type` (defining the type of the operation) equal to `Python` and two
