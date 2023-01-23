@@ -2,25 +2,16 @@
 
 There are three APIs for a graph traversal and transformation used in the Model Optimizer:
 1. The API provided with the `networkx` Python library for the `networkx.MultiDiGraph` class, which is the base class for
-the `mo.graph.graph.Graph` object. For more details, refer to the [Model Representation in Memory](@ref mo-model-representation-in-memory). 
-
-For example, the following methods belong to this API level: `graph.add_edges_from([list])`,
+the `mo.graph.graph.Graph` object. For more details, refer to the [Model Representation in Memory](@ref mo-model-representation-in-memory). For example, the following methods belong to this API level: `graph.add_edges_from([list])`,
 `graph.add_node(x, attrs)`, `graph.out_edges(node_id)` etc where `graph` is a an instance of the `networkx.MultiDiGraph`
 class. 
 **This is the lowest-level API. Avoid using it in the Model Optimizer transformations**.
 
 2. The API built around the `mo.graph.graph.Node` class. The `Node` class is the primary class to work with graph nodes
-and their attributes. 
-**There are some `Node` class methods not recommended for use and some functions defined in the `mo.graph.graph` have been deprecated**. 
-
-Examples of such methods and functions are: `node.in_node(y)`, `node.out_node(x)`, `node.get_outputs()`, `node.insert_node_after(n1, y)`, `create_edge(n1, n2)` etc. For more details, refer to the `mo/graph/graph.py` file.
+and their attributes. **There are some Node class methods not recommended for use and some functions defined in the mo.graph.graph have been deprecated**. Examples of such methods and functions are: `node.in_node(y)`, `node.out_node(x)`, `node.get_outputs()`, `node.insert_node_after(n1, y)`, `create_edge(n1, n2)` etc. For more details, refer to the `mo/graph/graph.py` file.
 
 3. The high-level API called Model Optimizer Graph API, which uses `mo.graph.graph.Graph`, `mo.graph.port.Port` and
-`mo.graph.connection.Connection` classes. 
-
-For example, the following methods belong to this API level: `node.in_port(x)`, `node.out_port(y)`,  `port.get_connection()`, `connection.get_source()`,
-`connection.set_destination(dest_port)` etc. 
-**This is the recommended API for the Model Optimizer transformations and operations implementation**.
+`mo.graph.connection.Connection` classes. For example, the following methods belong to this API level: `node.in_port(x)`, `node.out_port(y)`,  `port.get_connection()`, `connection.get_source()`, `connection.set_destination(dest_port)` etc. **This is the recommended API for the Model Optimizer transformations and operations implementation**.
 
 The main benefit of using the Model Optimizer Graph API is that it hides some internal implementation details (the fact that
 the graph contains data nodes), provides API to perform safe and predictable graph manipulations, and adds operation

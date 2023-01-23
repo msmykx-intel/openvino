@@ -102,7 +102,7 @@ output **port 1** is consumed with the **Operation 4** (the input **port 0**).
 
 Each edge has two attributes `in` and `out` containing the input port number of the consumer node and the output port
 number of the producer node. These attributes describe the fact that nodes are operations consuming some input tensors
-and producing some output tensors. From the perspective of Model Optimizer, nodes themselves are "black boxes" because
+and producing some output tensors. From the perspective of Model Optimizer, nodes themselves are **black boxes** because
 they do not contain required information about the operation they perform.
 
 ### Operations Attributes Extracting <a name="operations-attributes-extracting"></a>
@@ -209,8 +209,8 @@ edge attributes. Note that an `out` attribute is specified for edges **from oper
 attribute is specified for edges **from data** nodes only. This corresponds to the fact that a tensor (data node) is
 produced from a specific output port of an operation and is consumed with a specific input port of an operation. Also,
 a unique data node is created for each output port of an operation. The node may be used as an input node for several
-operation nodes. Similarly to the data node "data2_0", which is consumed with the input "port 1" of the "Operation 3" and
-input "port 0" of the "Operation 5".
+operation nodes. Similarly to the data node **data2_0**, which is consumed with the input **port 1** of the **Operation 3** and
+input **port 0** of the **Operation 5**.
 
 Now, consider how Model Optimizer performs shape and value propagation. Model Optimizer performs graph nodes
 topological sort. An error message is thrown if a graph contains a cycle. Then, shape inference functions are called for
@@ -244,7 +244,7 @@ available in the `mo/ops/reshape.py` file):
 ```
 
 Methods `in_port()` and `output_port()` of the `Node` class are used to get and set data node attributes. For more information on
-how to use them, refer to the [Graph Traversal and Modification Using Ports and Connections](Model_Optimizer_Ports_Connections.md) section.
+how to use them, refer to the [Graph Traversal and Modification Using Ports and Connections](Model_Optimizer_Ports_Connections.md) article.
 
 > **NOTE**: A shape inference function should perform output shape calculation in the original model layout. For
 > example, OpenVINO supports Convolution operations in NCHW layout only but TensorFlow supports NHWC layout as
