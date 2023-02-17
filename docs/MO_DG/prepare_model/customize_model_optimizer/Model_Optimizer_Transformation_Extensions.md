@@ -50,7 +50,7 @@ sub-graph of the original graph isomorphic to the specified pattern.
 node with a specific `op` attribute value.
 3. [Generic Front Phase Transformations](#generic-front-phase-transformations).
 4. Manually enabled transformation, defined with a JSON configuration file (for TensorFlow, ONNX, Apache MXNet, and PaddlePaddle models), specified using the `--transformations_config` command-line parameter:
-    1. [Node Name Pattern Front Phase Transformations](#node-name-pattern-front-phase-transformation).
+    1. [Node Name Pattern Front Phase Transformations](#node-name-pattern-front-phase-transformations).
     2. [Front Phase Transformations Using Start and End Points](#start-end-points-front-phase-transformations).
     3. [Generic Front Phase Transformations Enabled with Transformations Configuration File](#generic-transformations-config-front-phase-transformations).
 
@@ -67,9 +67,7 @@ works differently:
    overridden function, pass the `graph` object and a dictionary describing the matched sub-graph. You are
    required to write the transformation and connect the newly created nodes to the rest of the graph.
    2. The `generate_sub_graph(self, graph, match)` override the method. This case is not recommended for use because it is
-   the most complicated approach. It can be effectively replaced with one of two previous approaches. 
-   The explanation of this function is provided in the 
-   [Node Name Defined Sub-Graph Transformations](#node-name-defined-sub-graph-transformations) section.
+   the most complicated approach. It can be effectively replaced with one of two previous approaches.
 
 The sub-graph pattern is defined in the `pattern()` function. This function should return a dictionary with two keys:
 `nodes` and `edges`:
@@ -448,7 +446,7 @@ For other examples of transformations with points, refer to the
 ### Generic Front Phase Transformations Enabled with Transformations Configuration File <a name="generic-transformations-config-front-phase-transformations"></a>
 This type of transformation works similarly to the [Generic Front Phase Transformations](#generic-front-phase-transformations)
 but require a JSON configuration file to enable it similarly to
-[Node Name Pattern Front Phase Transformations](#node-name-pattern-front-phase-transformation) and
+[Node Name Pattern Front Phase Transformations](#node-name-pattern-front-phase-transformations) and
 [Front Phase Transformations Using Start and End Points](#start-end-points-front-phase-transformations).
 
 The base class for this type of transformation is
@@ -526,7 +524,7 @@ The are two differences:
 1. The transformation entry function name is `replace_pattern(self, graph, match)`.
 2. The pattern defining the graph should contain data nodes because the structure of the graph is different between
 front and middle phases. For more information about the
-graph structure changes, refer to the [Partial Inference](#partial-inference) section.
+graph structure changes, refer to the [Partial Inference](@ref mo-partial-inference)  section.
 
 For the example of a pattern-defined middle transformation, refer to the `extensions/middle/L2NormToNorm.py` file.
 
@@ -547,7 +545,7 @@ sub-graph of the original graph, isomorphic to the specified pattern.
 2. [Generic Back Phase Transformations](#generic-back-phase-transformations).
 
 > **NOTE**: The graph layout during the back phase is always NCHW. However, during the front and middle phases it could
-> be NHWC if the original model was using it. For more details, refer to [Model Conversion Pipeline](#model-conversion-pipeline) section.
+> be NHWC if the original model was using it. For more details, refer to [Model Conversion Pipeline](@ref mo-model-conversion-pipeline) section.
 
 ### Pattern-Defined Back Phase Transformations <a name="pattern-defined-back-phase-transformations"></a>
 This type of transformation is implemented using `mo.back.replacement.MiddleReplacementPattern` as a base class and
@@ -561,3 +559,10 @@ implemented using `mo.back.replacement.BackReplacementPattern` as a base class a
 [Generic Middle Phase Transformations](#generic-middle-phase-transformations).
 
 For the example of this transformation, refer to the `extensions/back/GatherNormalizer.py` file.
+
+## Additional Resources
+
+* [Model Optimizer Extensibility](Customize_Model_Optimizer.md)
+* [Graph Traversal and Modification Using Ports and Connections](Model_Optimizer_Ports_Connections.md)
+* [Model Optimizer Extensions](Model_Optimizer_Extensions.md)
+* [Extending Model Optimizer with Caffe Python Layers](Extending_Model_Optimizer_with_Caffe_Python_Layers.md)

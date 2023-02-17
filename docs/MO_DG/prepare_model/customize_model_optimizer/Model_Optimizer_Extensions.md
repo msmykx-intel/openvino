@@ -41,3 +41,9 @@ Model Optimizer uses the same layout internally to keep built-in extensions. The
 
 > **NOTE**: Model Optimizer itself is built by using these extensions, so there is a huge number of examples of their
 > usage in the Model Optimizer code.
+
+## Additional Resources
+
+* [Model Optimizer Extensibility](Customize_Model_Optimizer.md)
+* [Graph Traversal and Modification Using Ports and Connections](Model_Optimizer_Ports_Connections.md)
+* [Extending Model Optimizer with Caffe Python Layers](Extending_Model_Optimizer_with_Caffe_Python_Layers.md)

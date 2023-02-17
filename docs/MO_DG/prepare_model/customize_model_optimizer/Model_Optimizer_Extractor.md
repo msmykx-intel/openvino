@@ -1,14 +1,13 @@
 # Operation Extractor {#openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Model_Optimizer_Extensions_Model_Optimizer_Extractor}
 
-Model Optimizer runs specific extractor for each operation in the model during the model loading. For more information about this process, refer to the
-[operations-attributes-extracting](#operations-attributes-extracting) section.
+Model Optimizer runs specific extractor for each operation in the model during the model loading.
 
 There are several types of Model Optimizer extractor extensions:
-1. The generic one, which is described in this section.
+1. The generic one, which is described in this article.
 2. The special extractor for Caffe models with Python layers. This kind of extractor is described in the
 [Extending Model Optimizer with Caffe Python Layers](Extending_Model_Optimizer_with_Caffe_Python_Layers.md) guide.
 
-This section is focused on the option #1, which provides a generic mechanism for the operation extractor applicable for
+Generic extension provides a generic mechanism for the operation extractor applicable for
 all frameworks. Model Optimizer provides the `mo.front.extractor.FrontExtractorOp` class as a base class to implement the
 extractor. It has the `extract` class method, which gets the only parameter `Node`, which corresponds to the graph node to
 extract data from. The operation description in the original framework format is stored in the attribute `pb` of the
@@ -99,3 +98,10 @@ these attributes are parsed from the particular instance of the operation.
 
 > **NOTE**: Model Optimizer uses numpy arrays to store values and numpy arrays of `np.int64` type to store shapes in the
 > graph.
+
+## Additional Resources
+
+* [Model Optimizer Extensibility](Customize_Model_Optimizer.md)
+* [Graph Traversal and Modification Using Ports and Connections](Model_Optimizer_Ports_Connections.md)
+* [Model Optimizer Extensions](Model_Optimizer_Extensions.md)
+* [Extending Model Optimizer with Caffe Python Layers](Extending_Model_Optimizer_with_Caffe_Python_Layers.md)

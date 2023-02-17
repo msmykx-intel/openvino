@@ -17,22 +17,22 @@ manipulations are performed with graph `Node`s and their attributes and does not
 
 There are a number of common attributes used in the operations. Below is the list of these attributes with description.
 
-* `id` — unique identifier of a node in a graph. Generated automatically, equal to the number of nodes in the graph plus
-1 if not specified. **Mandatory**.
-* `name` — name of the operation. Generated automatically, equal to the `id` if not specified. **Mandatory**.
-* `type` — type of the operation according to the [opset specification](@ref openvino_docs_ops_opset). For the internal
+* `id` — **(Mandatory)** unique identifier of a node in a graph. Generated automatically, equal to the number of nodes in the graph plus
+1 if not specified. 
+* `name` — **(Mandatory)** name of the operation. Generated automatically, equal to the `id` if not specified.
+* `type` — **(Mandatory)** type of the operation according to the [opset specification](@ref openvino_docs_ops_opset). For the internal
 Model Optimizer operations, this attribute should be set to `None`. The model conversion fails if an operation with
-`type` equal to `None` comes to the IR emitting phase. **Mandatory**.
-* `version` — the operation set (opset) name the operation belongs to. If not specified, Model Optimizer sets it
+`type` equal to `None` comes to the IR emitting phase.
+* `version` — **(Mandatory)** the operation set (opset) name the operation belongs to. If not specified, Model Optimizer sets it
 equal to `experimental`. For more information about operation sets, refer to 
-[OpenVINO Model Representation](@ref openvino_docs_OV_UG_Model_Representation) section. **Mandatory**.
+[OpenVINO Model Representation](@ref openvino_docs_OV_UG_Model_Representation) article.
 * `op` — Model Optimizer type of the operation. In many cases, the value of `type` is equal to the value of `op`. However,
 when Model Optimizer cannot instantiate the opset operation during model loading, it creates an instance of an internal
 operation. Thus, the attribute `op` is used as a type of this internal operation. Later in the pipeline, the node created
 from an internal operation will be replaced during front, middle or back phase with node(s) created from the opset.
 * `infer` — the attribute defines a function calculating output tensor(s) shape and optional value(s). The attribute
 may be set to `None` for the internal Model Optimizer operations used during the front phase only. For more information 
-about the shape inference function, refer to the [Partial Inference](#partial-inference) section.
+about the shape inference function, refer to the [Partial Inference](@ref mo-partial-inference) section.
 * `type_infer` — the attribute defines a function calculating output tensor(s) data type. If the attribute is not
 defined, the default function is used. The function checks if the `data_type` node attribute is set and then
 propagates this type to the output tensor from the "port 0". Otherwise, it propagates the data type of the tensor coming
@@ -107,3 +107,10 @@ only parameter and returns a string with the value to be saved to the IR. Exampl
 3. A tuple, where the first element is a string defining the name of the attribute as it will appear in the IR and the
 second element is the name of the `Node` attribute to get the value from. Examples of this case are `pool-method` and
 `exclude-pad`.
+
+## Additional Resources
+
+* [Model Optimizer Extensibility](Customize_Model_Optimizer.md)
+* [Graph Traversal and Modification Using Ports and Connections](Model_Optimizer_Ports_Connections.md)
+* [Model Optimizer Extensions](Model_Optimizer_Extensions.md)
+* [Extending Model Optimizer with Caffe Python Layers](Extending_Model_Optimizer_with_Caffe_Python_Layers.md)

@@ -7,19 +7,35 @@ the `mo.graph.graph.Graph` object. For example, the following methods belong to 
    * `graph.add_edges_from([list])`,
    * `graph.add_node(x, attrs)`, 
    * `graph.out_edges(node_id)`,
-   *  etc where `graph` is a an instance of the `networkx.MultiDiGraph` class. 
+   *  any method where `graph` is a an instance of the `networkx.MultiDiGraph` class. 
+
+      > **NOTE**: This is the lowest-level API. Avoid using it in the Model Optimizer transformations.
    
    For more details, refer to the [Model Representation in Memory](@ref mo-model-representation-in-memory).
 
-
-   > **NOTE**: This is the lowest-level API. Avoid using it in the Model Optimizer transformations.
-
-
 2. The API built around the `mo.graph.graph.Node` class. The `Node` class is the primary class to work with graph nodes
-and their attributes. **There are some Node class methods not recommended for use and some functions defined in the mo.graph.graph have been deprecated**. Examples of such methods and functions are: `node.in_node(y)`, `node.out_node(x)`, `node.get_outputs()`, `node.insert_node_after(n1, y)`, `create_edge(n1, n2)` etc. For more details, refer to the `mo/graph/graph.py` file.
+and their attributes. Examples of such methods and functions are: 
+
+   * `node.in_node(y)`, 
+   * `node.out_node(x)`, 
+   * `node.get_outputs()`, 
+   * `node.insert_node_after(n1, y)`, 
+   * `create_edge(n1, n2)`.
+
+      > **NOTE**: There are some Node class methods not recommended for use and some functions defined in the mo.graph.graph have been deprecated.
+
+   For more details, refer to the `mo/graph/graph.py` file.
 
 3. The high-level API called Model Optimizer Graph API, which uses `mo.graph.graph.Graph`, `mo.graph.port.Port` and
-`mo.graph.connection.Connection` classes. For example, the following methods belong to this API level: `node.in_port(x)`, `node.out_port(y)`,  `port.get_connection()`, `connection.get_source()`, `connection.set_destination(dest_port)` etc. **This is the recommended API for the Model Optimizer transformations and operations implementation**.
+`mo.graph.connection.Connection` classes. For example, the following methods belong to this API level: 
+
+   * `node.in_port(x)`, 
+   * `node.out_port(y)`,  
+   * `port.get_connection()`, 
+   * `connection.get_source()`, 
+   * `connection.set_destination(dest_port)` 
+   
+      > **NOTE**:  This is the recommended API for the Model Optimizer transformations and operations implementation.
 
 The main benefit of using the Model Optimizer Graph API is that it hides some internal implementation details (the fact that
 the graph contains data nodes), provides API to perform safe and predictable graph manipulations, and adds operation
@@ -48,8 +64,8 @@ For example, `in_port.data.get_shape()` returns an input shape of a tensor conne
 (`out_port.type == 'out'`).
 
 > **NOTE**: Functions `get_shape()` and `get_value()` return `None` until the partial inference phase.  For more information 
-> about model conversion phases, refer to the [Model Conversion Pipeline](@ref mo-model-conversion-pipeline) section. For information 
-> about partial inference phase, see the [Partial Inference](@ref mo-partial-inference) section.
+> about model conversion phases, refer to the [Model Conversion Pipeline](@ref mo-model-conversion-pipeline). For information 
+> about partial inference phase, see the [Partial Inference](@ref mo-partial-inference).
 
 There are several methods of the `Node` class to get the instance of a corresponding port:
 * `in_port(x)` and `out_port(x)` to get the input/output port with number `x`.
@@ -79,7 +95,7 @@ depicted with light green boxes.
 
 
 Operation nodes have input ports (yellow squares) and output ports (light purple squares). Input port may not be
-connected. For example, the input "port 2" of node "Op1" does not have incoming edge, while output port always has an
+connected. For example, the input **port 2** of node **Op1** does not have incoming edge, while output port always has an
 associated data node (after the partial inference when the data nodes are added to the graph), which may have no
 consumers.
 
@@ -87,8 +103,8 @@ Ports can be used to traverse a graph. The method `get_source()` of an input por
 tensor consumed by the input port. It is important that the method works the same during front, middle and back phases of a
 model conversion even though the graph structure changes (there are no data nodes in the graph during the front phase).
 
-Let's assume that there are 4 instances of `Node` object `op1, op2, op3`, and `op4` corresponding to nodes "Op1", "Op2",
-"Op3", and "Op4", respectively. The result of `op2.in_port(0).get_source()` and `op4.in_port(1).get_source()` is the
+Let's assume that there are 4 instances of `Node` object `op1, op2, op3`, and `op4` corresponding to nodes **Op1**, **Op2**,
+**Op3**, and **Op4**, respectively. The result of `op2.in_port(0).get_source()` and `op4.in_port(1).get_source()` is the
 same object `op1.out_port(1)` of type `Port`.
 
 The method `get_destination()` of an output port returns the input port of the node consuming this tensor. If there are
@@ -109,8 +125,6 @@ For example, applying the following two methods to the graph above will result i
 op4.in_port(1).disconnect()
 op3.out_port(0).connect(op4.in_port(1))
 ```
-
-
 
 @sphinxdirective`
 
@@ -163,4 +177,10 @@ Note that connection works seamlessly during front, middle, and back phases and 
 different.
 
 > **NOTE**: For a full list of available methods, refer to the `Connection` class implementation in the `mo/graph/connection.py` file.
+
+## Additional Resources
+
+* [Model Optimizer Extensibility](Customize_Model_Optimizer.md)
+* [Model Optimizer Extensions](Model_Optimizer_Extensions.md)
+* [Extending Model Optimizer with Caffe Python Layers](Extending_Model_Optimizer_with_Caffe_Python_Layers.md)
 

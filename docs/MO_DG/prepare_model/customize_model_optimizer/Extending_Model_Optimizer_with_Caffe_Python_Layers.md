@@ -85,4 +85,6 @@ class ProposalPythonFrontExtractor(CaffePythonFrontExtractorOp):
 
 ## Additional Resources
 
-* [Customize Model Optimizer](Customize_Model_Optimizer.md)
+* [Model Optimizer Extensibility](Customize_Model_Optimizer.md)
+* [Graph Traversal and Modification Using Ports and Connections](Model_Optimizer_Ports_Connections.md)
+* [Model Optimizer Extensions](Model_Optimizer_Extensions.md)

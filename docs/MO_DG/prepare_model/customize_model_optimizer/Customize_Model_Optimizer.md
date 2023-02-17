@@ -91,8 +91,8 @@ The result of a model loading step is a `Graph` object, which can be depicted li
 
 Model Optimizer loader saves an operation instance framework description (usually it is a Protobuf message) into a node
 attribute usually with a name `pb` for each operation of an input model. It is important that this is a
-**framework-specific** description of an operation. This means that an operation, for example,
-[Convolution](../../../ops/convolution/Convolution_1.md) may be represented differently in, for example, Caffe and
+**framework-specific** description of an operation. This means that an operation (e.g. 
+[Convolution](../../../ops/convolution/Convolution_1.md)) may be represented differently in, for example, Caffe and
 TensorFlow frameworks but performs the same calculations from a mathematical point of view.
 
 In the image above, the **Operation 2** has one input and two outputs. The tensor produced from the output **port 0** is
@@ -327,5 +327,7 @@ the `mo/pipeline/common.py` file and [Model Optimizer Operation](Model_Optimizer
 * [Converting a Model to Intermediate Representation (IR)](../convert_model/Converting_Model.md)
 * [OpenVINO Model Representation](../../../OV_Runtime_UG/model_representation.md)
 * [OpenVINO™ Extensibility Mechanism](../../../Extensibility_UG/Intro.md)
+* [Graph Traversal and Modification Using Ports and Connections](Model_Optimizer_Ports_Connections.md)
+* [Model Optimizer Extensions](Model_Optimizer_Extensions.md)
 * [Extending Model Optimizer with Caffe Python Layers](Extending_Model_Optimizer_with_Caffe_Python_Layers.md)
 
