@@ -99,7 +99,7 @@ In the image above, the **Operation 2** has one input and two outputs. The tenso
 consumed with the **Operation 5** (the input **port 0**) and **Operation 3** (the input **port 1**). The tensor produced from the
 output **port 1** is consumed with the **Operation 4** (the input **port 0**).
 
-Each edge has two attributes `in` and `out` containing the input port number of the consumer node and the output port
+Each edge has two attributes: `in` and `out`. They contain the input port number of the consumer node and the output port
 number of the producer node. These attributes describe the fact that nodes are operations consuming some input tensors
 and producing some output tensors. From the perspective of Model Optimizer, nodes themselves are **black boxes** because
 they do not contain required information about the operation they perform.
