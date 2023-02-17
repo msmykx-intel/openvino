@@ -83,6 +83,6 @@ class ProposalPythonFrontExtractor(CaffePythonFrontExtractorOp):
         return cls.enabled
 ```
 
-## See Also
+## Additional Resources
 
 * [Customize Model Optimizer](Customize_Model_Optimizer.md)

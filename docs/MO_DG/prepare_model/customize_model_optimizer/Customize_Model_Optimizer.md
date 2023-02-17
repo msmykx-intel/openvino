@@ -20,8 +20,7 @@ There are several cases when the customization is needed:
 combination of supported operations. In this case, a custom transformation should be implemented to replace unsupported
 operation(s) with supported ones.
 * A model contains a sub-graph of operations that can be replaced with a smaller number of operations to get better
-performance. This example corresponds to so-called *fusing transformations* (e.g., replacing a sub-graph performing the calculation \f$x / (1.0 + e^{-(beta * x)})\f$ with a single operation of type)
-[Swish](../../../ops/activation/Swish_4.md).
+performance. This example corresponds to so-called *fusing transformations* (e.g., replacing a sub-graph performing the calculation \f$x / (1.0 + e^{-(beta * x)})\f$ with a single operation of type [Swish](../../../ops/activation/Swish_4.md)).
 * A model contains a custom framework operation (the operation that is not a part of an official operation set of the
 framework) that was developed using the framework extensibility mechanism. In this case, Model Optimizer should know
 how to handle the operation and generate a corresponding section in an IR for it.
@@ -39,7 +38,7 @@ producer operation (node) to a consumer operation (node).
 
 Model Optimizer uses Python class `mo.graph.graph.Graph` instance to represent the computation graph in memory during
 the model conversion. This class is inherited from the `networkx.MultiDiGraph` class of the standard `networkx` Python
-library. It provides many convenient methods to traverse and modify the graph. For the examples, refer to the `mo/graph/graph.py` file.
+library. It provides many convenient methods to traverse and modify the graph. Refer to the `mo/graph/graph.py` file for examples.
 
 Model Optimizer keeps all necessary information about the operation in node attributes. Model Optimizer uses the `mo.graph.graph.Node` class defined in the  `mo/graph/graph.py` file, which is a wrapper on top of a `networkx` node attributes
 dictionary, and provides many convenient methods to work with the node. For example, the node `my_node` attribute with a
@@ -127,10 +126,10 @@ The result of operations attributes extracting step can be depicted like in the 
 ![Graph After Attributes Extraction](../../../img/MO_graph_after_extractors.svg)
 
 The only difference in the graph from the previous step is that nodes contain dictionary with extracted attributes and
-operation-specific attributes needed for Model Optimizer. However, starting from this step, Model Optimizer does not
-need the original representation of the operation/model and uses just Model Optimizer representation (there are some
+operation-specific attributes needed for Model Optimizer. However, from this step, Model Optimizer does not
+need the original representation of the operation/model and just uses Model Optimizer representation (there are some
 peculiar cases in which Model Optimizer still uses the `pb` attribute, covered in this
-article partially). A detailed list of common node attributes and their values is provided below in the
+article partially). A detailed list of common node attributes and their values is provided in the
 [Model Optimizer Operation](Model_Optimizer_Operation.md) article.
 
 ### Front Phase <a name="front-phase"></a>
