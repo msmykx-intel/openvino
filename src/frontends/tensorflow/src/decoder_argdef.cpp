@@ -53,7 +53,12 @@ void DecoderArgDef::get_input_node(size_t input_port_idx,
 ov::Any DecoderArgDef::get_attribute(const std::string& name) const {
     FRONT_END_GENERAL_CHECK(name == "type",
                             "[TensorFlow Frontend] Internal error: DecoderArgDef supports only `type` attribute.");
-    return get_ov_type(m_arg_def->type());
+    if (TYPE_MAP().count(m_arg_def->type())) {
+        return TYPE_MAP().at(m_arg_def->type());
+    } else {
+        // for all unsupported types return dynamic type
+        return ov::element::dynamic;
+    }
 }
 
 }  // namespace tensorflow

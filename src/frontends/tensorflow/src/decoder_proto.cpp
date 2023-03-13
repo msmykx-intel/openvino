@@ -129,7 +129,12 @@ ov::Any DecoderProto::get_attribute(const std::string& name) const {
     }
 
     case ::tensorflow::AttrValue::ValueCase::kType: {
-        return get_ov_type(attrs[0].type());
+        if (TYPE_MAP().count(attrs[0].type())) {
+            return TYPE_MAP().at(attrs[0].type());
+        } else {
+            // for all unsupported types return dynamic type
+            return ov::element::dynamic;
+        }
     }
 
     case ::tensorflow::AttrValue::ValueCase::kList: {
