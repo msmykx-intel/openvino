@@ -142,7 +142,7 @@ Models with `keep_aspect_ratio_resizer` were trained to recognize object in real
 
 ## Model Conversion Process in Detail
 
-This section is intended for users who want to understand how Model Optimizer performs Object Detection API models conversion in details. The information in this section is also useful for users having complex models that are not converted with Model Optimizer out of the box. It is highly recommended to read the **Graph Transformation Extensions** section in the [Model Optimizer Extensibility](../../customize_model_optimizer/Customize_Model_Optimizer.md) documentation first to understand sub-graph replacement concepts which are used here.
+This section is intended for users who want to understand how Model Optimizer performs Object Detection API models conversion in details. The information in this section is also useful for users having complex models that are not converted with Model Optimizer out of the box. It is highly recommended to read the **Graph Transformation Extensions** section in the [Model Optimizer Extensibility](@ref openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Model_Optimizer_Extensions_Model_Optimizer_Transformation_Extensions) documentation first to understand sub-graph replacement concepts which are used here.
 
 It is also important to open the model in the [TensorBoard](https://www.tensorflow.org/guide/summaries_and_tensorboard) to see the topology structure. Model Optimizer can create an event file that can be then fed to the TensorBoard tool. Run Model Optimizer, providing two command line parameters:
 * `--input_model <path_to_frozen.pb>` --- Path to the frozen model.
