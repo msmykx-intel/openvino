@@ -11,15 +11,14 @@
    AccuracyAwareQuantization Method <accuracy_aware_README>
 
 
-The Accuracy-aware Quantization algorithm allows to perform quantization while maintaining accuracy within a pre-defined range. Note that it should be used only if the :doc:`Default Quantization <pot_default_quantization_usage>` introduces a significant accuracy degradation. The reason for it not being the primary choice is its potential for performance degradation, due to some layers getting reverted to the original precision. To proceed with this article, make sure you have read how to use :doc:`Default Quantization <pot_default_quantization_usage>`.
+The Accuracy-aware Quantization algorithm allows to perform quantization while maintaining accuracy within a pre-defined range. Note that it should be used only 
+if the :doc:`Default Quantization <pot_default_quantization_usage>` introduces a significant accuracy degradation. The reason for it not being the primary choice 
+is its potential for performance degradation, due to some layers getting reverted to the original precision. To proceed with this article, make sure you have read 
+how to use :doc:`Default Quantization <pot_default_quantization_usage>`.
 
 .. note::
 
-   The Accuracy-aware Quantization algorithm's behavior is different for the GNA 
-   ``target_device``. In this case it searches for the best configuration and selects 
-   between INT8 and INT16 precisions for weights of each layer. The algorithm works 
-   for the ``performance`` preset only. It is not useful for the ``accuracy`` preset, 
-   since the whole model is already in INT16 precision.
+   The Accuracy-aware Quantization algorithm's behavior is different for the GNA ``target_device``. In this case it searches for the best configuration and selects between INT8 and INT16 precisions for weights of each layer. The algorithm works or the ``performance`` preset only. It is not useful for the ``accuracy`` preset, since the whole model is already in INT16 precision.
 
 
 A script for Accuracy-aware Quantization includes four steps:
@@ -62,7 +61,7 @@ should be implemented. Each implementation should override the following propert
 - ``reset()`` - resets collected accuracy metric.
 - ``get_attributes()`` - returns a dictionary of metric attributes:
 
-  .. code-block::
+  .. code-block:: console
 
      {metric_name: {attribute_name: value}}
 
@@ -228,3 +227,4 @@ Examples
 
 
 @endsphinxdirective
+
