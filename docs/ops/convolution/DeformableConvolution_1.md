@@ -117,7 +117,7 @@ Where
 
 2D DeformableConvolution (deformable_group=1)
 
-.. code-block:: console
+.. code-block:: cpp
    
    <layer type="DeformableConvolution" ...>
        <data dilations="1,1" pads_begin="0,0" pads_end="0,0" strides="1,1" auto_pad="explicit" group="1" deformable_group="1"/>

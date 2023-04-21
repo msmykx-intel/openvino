@@ -61,7 +61,7 @@ If ``mode = depth_first``:
 
 **Example**
 
-.. code-block:: console
+.. code-block:: cpp
    
    <layer type="DepthToSpace" ...>
        <data block_size="2" mode="blocks_first"/>
@@ -75,10 +75,10 @@ If ``mode = depth_first``:
        </input>
        <output>
            <port id="1">
-               <dim>5</dim>  <!-- data.shape[0] -->
-               <dim>7</dim>  <!-- data.shape[1] / (block_size ^ 2) -->
-               <dim>4</dim>  <!-- data.shape[2] * block_size -->
-               <dim>6</dim>  <!-- data.shape[3] * block_size -->
+               <dim>5</dim>  < !-- data.shape[0] -->
+               <dim>7</dim>  < !-- data.shape[1] / (block_size ^ 2) -->
+               <dim>4</dim>  < !-- data.shape[2] * block_size -->
+               <dim>6</dim>  < !-- data.shape[3] * block_size -->
            </port>
        </output>
    </layer>

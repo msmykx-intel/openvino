@@ -63,7 +63,7 @@ Calculations for the generic case of axes and signal sizes are similar.
 
 There is no ``signal_size`` input (4D input tensor):
 
-.. code-block:: console
+.. code-block:: cpp
    
    <layer ... type="DFT" ... >
        <input>
@@ -74,7 +74,7 @@ There is no ``signal_size`` input (4D input tensor):
                <dim>2</dim>
            </port>
            <port id="1">
-               <dim>2</dim> <!-- axes input contains [1, 2] -->
+               <dim>2</dim> < !-- axes input contains [1, 2] -->
            </port>
        <output>
            <port id="2">

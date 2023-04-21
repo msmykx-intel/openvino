@@ -60,7 +60,7 @@ The result of division by zero is undefined.
 
 *Example 1*
 
-.. code-block:: console
+.. code-block:: cpp
    
    <layer ... type="Divide">
        <data auto_broadcast="none" m_pythondiv="true"/>
@@ -84,7 +84,7 @@ The result of division by zero is undefined.
 
 *Example 2: broadcast*
 
-.. code-block:: console
+.. code-block:: cpp
    
    <layer ... type="Divide">
        <data auto_broadcast="numpy" m_pythondiv="false"/>
@@ -112,4 +112,5 @@ The result of division by zero is undefined.
    </layer>
 
 @endsphinxdirective
+
 
