@@ -1,22 +1,25 @@
 ## DeformableConvolution {#openvino_docs_ops_convolution_DeformableConvolution_8}
 
+@sphinxdirective
+
 **Versioned name**: *DeformableConvolution-8*
 
 **Category**: *Convolution*
 
 **Short description**: Computes 2D deformable convolution of input and kernel tensors.
 
-**Detailed description**: *Deformable Convolution* is similar to regular *Convolution* but its receptive field is deformed because of additional spatial offsets used during input sampling. More thorough explanation can be found in [Deformable Convolutions Demystified](https://towardsdatascience.com/deformable-convolutions-demystified-2a77498699e8), [Deformable Convolutional Networks](https://arxiv.org/abs/1703.06211).
+**Detailed description**: *Deformable Convolution* is similar to regular *Convolution* but its receptive field is deformed because of additional spatial offsets used during input sampling. More thorough explanation can be found in `Deformable Convolutions Demystified <https://towardsdatascience.com/deformable-convolutions-demystified-2a77498699e8>`__ , `Deformable Convolutional Networks <https://arxiv.org/abs/1703.06211>`__.
 
-Modification of DeformableConvolution using modulating scalars is also supported. Please refer to [Deformable ConvNets v2: More Deformable, Better Results](https://arxiv.org/pdf/1811.11168.pdf).
+Modification of DeformableConvolution using modulating scalars is also supported. Please refer to `Deformable ConvNets v2: More Deformable, Better Results <https://arxiv.org/pdf/1811.11168.pdf>`__.
 
 Output is calculated using the following formula:
 
-  \f[
+.. math::
+   
+   y(p) = \displaystyle{\sum_{k = 1}^{K}}w_{k}x(p + p_{k} + {\Delta}p_{k}) \cdot {\Delta}m_{k}
 
-  y(p) = \displaystyle{\sum_{k = 1}^{K}}w_{k}x(p + p_{k} + {\Delta}p_{k}) \cdot {\Delta}m_{k}
+@endsphinxdirective
 
-  \f]
 Where
 * K is a number of sampling locations, e.g. for kernel 3x3 and dilation = 1, K = 9
 
