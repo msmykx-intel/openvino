@@ -18,21 +18,17 @@ Output is calculated using the following formula:
    
    y(p) = \displaystyle{\sum_{k = 1}^{K}}w_{k}x(p + p_{k} + {\Delta}p_{k}) \cdot {\Delta}m_{k}
 
+Where
+
+* K is a number of sampling locations, e.g. for kernel 3x3 and dilation = 1, K = 9
+* :math:`x(p)` and :math:`y(p)` denote the features at location p from the input feature maps x and output feature maps y
+* :math:`w_{k}` is the weight for k-th location.
+* :math:`p_{k}` is pre-specified offset for the k-th location, e.g. K = 9 and :math:`p_{k} \in (-1, -1),(-1, 0), . . . ,(1, 1)`
+* :math:`{\Delta}p_{k}` is the learnable offset for the k-th location.
+* :math:`{\Delta}m_{k}` is the modulation scalar from 0 to 1 for the k-th location.
+
 @endsphinxdirective
 
-Where
-* K is a number of sampling locations, e.g. for kernel 3x3 and dilation = 1, K = 9
-
-* \f$x(p)\f$ and \f$y(p)\f$ denote the features at location p from the input feature maps x and output feature maps y
-
-* \f$w_{k}\f$ is the weight for k-th location.
-
-* \f$p_{k}\f$ is pre-specified offset for the k-th location, e.g. K = 9 and
-\f$p_{k} \in \{(-1, -1),(-1, 0), . . . ,(1, 1)\}\f$
-
-* \f${\Delta}p_{k}\f$ is the learnable offset for the k-th location.
-
-* \f${\Delta}m_{k}\f$ is the modulation scalar from 0 to 1 for the k-th location.
 
 **Attributes**:
 
