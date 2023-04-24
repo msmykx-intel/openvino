@@ -1,4 +1,4 @@
-# DeformableConvolution {#openvino_docs_ops_convolution_DeformableConvolution_8}
+# DeformableConvolution-8 {#openvino_docs_ops_convolution_DeformableConvolution_8}
 
 @sphinxdirective
 
