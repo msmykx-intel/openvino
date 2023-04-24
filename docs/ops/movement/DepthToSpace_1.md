@@ -42,6 +42,7 @@ If ``mode = depth_first``:
 
   * **Description**: specifies how the input depth dimension is split to block coordinates and the new depth dimension.
   * **Range of values**:
+    
     * *blocks_first*: the input depth is divided to ``[block_size, ..., block_size,  new_depth]``
     * *depth_first*: the input depth is divided to ``[new_depth, block_size, ..., block_size]``
   * **Type**: ``string``
@@ -53,7 +54,7 @@ If ``mode = depth_first``:
 
 **Outputs**
 
-* **1**: permuted tensor of type *T* and shape ``[N, C / block_size ^ K, D1 * block_size, D2 * block_size, ..., DK * block_size]``.
+* **1**: permuted tensor of type *T* and shape ``[N, C / block_size ^ K, D1 \* block_size, D2 \* block_size, ..., DK \* block_size]``.
 
 **Types**
 

@@ -38,9 +38,9 @@ Let ``D`` be an input tensor ``A``, taking into account the ``signal_size``, and
 
 Next, put
 
-..math::
-  
-  X[j_0,\dots,j_{k-1},j_k,\dots,j_{k+r-1}]=D[j_0,\dots,j_{k-1},j_k,\dots,j_{k+r-1},0]+iD[j_0,\dots,j_{k-1},j_k,\dots,j_{k+r-1},1]
+.. math::
+   
+   X[j_0,\dots,j_{k-1},j_k,\dots,j_{k+r-1}]=D[j_0,\dots,j_{k-1},j_k,\dots,j_{k+r-1},0]+iD[j_0,\dots,j_{k-1},j_k,\dots,j_{k+r-1},1]
 
 for all indices ``j_0,...,j_{k+r-1}``, where ``i`` is an imaginary unit, that is ``X`` is a complex tensor.
 
@@ -52,10 +52,10 @@ Then the discrete Fourier transform is the tensor `Y` of the same shape as the t
 
 for all indices ``n_0,...,n_{k-1}`, `m_0,...,m_{r-1}``, and the result of the operation is the real tensor ``Z`` with the shape ``[B_0, ..., B_{k-1}, S_0, ..., S_{r-1}, 2]`` and such that
 
-.. math:
+.. math::
    
-   [Z[n_0,\dots,n_{k-1},m_0,\dots,m_{r-1}, 0]=Re Y[n_0,\dots,n_{k-1},m_0,\dots,m_{r-1}],
-   [Z[n_0,\dots,n_{k-1},m_0,\dots,m_{r-1}, 1]=Im Y[n_0,\dots,n_{k-1},m_0,\dots,m_{r-1}].
+   [Z[n_0,\dots,n_{k-1},m_0,\dots,m_{r-1}, 0]=Re Y[n_0,\dots,n_{k-1},m_0,\dots,m_{r-1}]], 
+   [Z[n_0,\dots,n_{k-1},m_0,\dots,m_{r-1}, 1]=Im Y[n_0,\dots,n_{k-1},m_0,\dots,m_{r-1}]].
 
 Calculations for the generic case of axes and signal sizes are similar.
 
@@ -88,7 +88,7 @@ There is no ``signal_size`` input (4D input tensor):
 
 There is no ``signal_size`` input (3D input tensor):
 
-.. code-block:: console
+.. code-block:: cpp
    
    <layer ... type="DFT" ... >
        <input>
@@ -98,7 +98,7 @@ There is no ``signal_size`` input (3D input tensor):
                <dim>2</dim>
            </port>
            <port id="1">
-               <dim>2</dim> <!-- axes input contains [0, 1] -->
+               <dim>2</dim> < !-- axes input contains [0, 1] -->
            </port>
        <output>
            <port id="2">
@@ -111,7 +111,7 @@ There is no ``signal_size`` input (3D input tensor):
 
 There is ``signal_size`` input (4D input tensor):
 
-.. code-block:: console
+.. code-block:: cpp
    
    <layer ... type="DFT" ... >
        <input>
@@ -122,10 +122,10 @@ There is ``signal_size`` input (4D input tensor):
                <dim>2</dim>
            </port>
            <port id="1">
-               <dim>2</dim> <!-- axes input contains [1, 2] -->
+               <dim>2</dim> < !-- axes input contains [1, 2] -->
            </port>
            <port id="2">
-               <dim>2</dim> <!-- signal_size input contains [512, 100] -->
+               <dim>2</dim> < !-- signal_size input contains [512, 100] -->
            </port>
        <output>
            <port id="3">
@@ -139,7 +139,7 @@ There is ``signal_size`` input (4D input tensor):
 
 There is ``signal_size`` input (3D input tensor):
 
-.. code-block:: console
+.. code-block:: cpp
    
    <layer ... type="DFT" ... >
        <input>
@@ -149,10 +149,10 @@ There is ``signal_size`` input (3D input tensor):
                <dim>2</dim>
            </port>
            <port id="1">
-               <dim>2</dim> <!-- axes input contains [0, 1] -->
+               <dim>2</dim> < !-- axes input contains [0, 1] -->
            </port>
            <port id="2">
-               <dim>2</dim> <!-- signal_size input contains [512, 100] -->
+               <dim>2</dim> < !-- signal_size input contains [512, 100] -->
            </port>
        <output>
            <port id="3">
@@ -165,7 +165,7 @@ There is ``signal_size`` input (3D input tensor):
 
 There is ``signal_size`` input (5D input tensor, ``-1`` in ``signal_size``, unsorted axes):
 
-.. code-block:: console
+.. code-block:: cpp
    
    <layer ... type="DFT" ... >
        <input>
@@ -177,10 +177,10 @@ There is ``signal_size`` input (5D input tensor, ``-1`` in ``signal_size``, unso
                <dim>2</dim>
            </port>
            <port id="1">
-               <dim>3</dim> <!-- axes input contains  [3, 1, 2] -->
+               <dim>3</dim> < !-- axes input contains  [3, 1, 2] -->
            </port>
            <port id="2">
-               <dim>3</dim> <!-- signal_size input contains [170, -1, 1024] -->
+               <dim>3</dim> < !-- signal_size input contains [170, -1, 1024] -->
            </port>
        <output>
            <port id="3">
@@ -195,7 +195,7 @@ There is ``signal_size`` input (5D input tensor, ``-1`` in ``signal_size``, unso
 
 There is ``signal_size`` input (5D input tensor, ``-1`` in ``signal_size``, unsorted axes, the second example):
 
-.. code-block:: console
+.. code-block:: cpp
    
    <layer ... type="DFT" ... >
        <input>
@@ -207,10 +207,10 @@ There is ``signal_size`` input (5D input tensor, ``-1`` in ``signal_size``, unso
                <dim>2</dim>
            </port>
            <port id="1">
-               <dim>3</dim> <!-- axes input contains  [3, 0, 2] -->
+               <dim>3</dim> < !-- axes input contains  [3, 0, 2] -->
            </port>
            <port id="2">
-               <dim>3</dim> <!-- signal_size input contains [258, -1, 2056] -->
+               <dim>3</dim> < !-- signal_size input contains [258, -1, 2056] -->
            </port>
        <output>
            <port id="3">

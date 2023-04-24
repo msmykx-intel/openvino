@@ -23,7 +23,7 @@ Where
 * K is a number of sampling locations, e.g. for kernel 3x3 and dilation = 1, K = 9
 * :math:`x(p)` and :math:`y(p)` denote the features at location p from the input feature maps x and output feature maps y
 * :math:`w_{k}` is the weight for k-th location.
-* :math:`p_{k}` is pre-specified offset for the k-th location, e.g. K = 9 and :math:`p_{k} \in (-1, -1),(-1, 0), . . . ,(1, 1)`
+* :math:`p_{k}` is pre-specified offset for the k-th location, e.g. K = 9 and :math:`p_{k} \in {(-1, -1),(-1, 0), . . . ,(1, 1)}`
 * :math:`{\Delta}p_{k}` is the learnable offset for the k-th location.
 * :math:`{\Delta}m_{k}` is the modulation scalar from 0 to 1 for the k-th location.
 
