@@ -38,7 +38,7 @@
    Cosh-1 <openvino_docs_ops_arithmetic_Cosh_1>
    CTCLoss-4 <openvino_docs_ops_sequence_CTCLoss_4>
    CumSum-3 <openvino_docs_ops_arithmetic_CumSum_3>
-   DeformableConvolution-1 <openvino_docs_ops_convolution_DeformableConvolution_1>
+   DeformableConvolution-1 <openvino_docs_ops_convolution_DeformableConvolution_1_fixed>
    DeformableConvolution-8 <openvino_docs_ops_convolution_DeformableConvolution_8>
    DeformablePSROIPooling-1 <openvino_docs_ops_detection_DeformablePSROIPooling_1>
    DepthToSpace-1 <openvino_docs_ops_movement_DepthToSpace_1>
