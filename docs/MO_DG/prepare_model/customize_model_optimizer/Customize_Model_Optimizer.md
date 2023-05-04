@@ -11,8 +11,10 @@
    openvino_docs_MO_DG_prepare_model_customize_model_optimizer_Extending_Model_Optimizer_With_Caffe_Python_Layers
 
 .. danger::
-   
-   Code described here is kept for backwards compatibility. OpenVINO will move TensorFlow conversion from legacy python-based frontend to new C++ based frontend, therefore **this extension guide won't be a recommended way** for TensorFlow extension in Model Optimizer and soon will be marked as a **deprecated solution**. User should use **Frontend Extension API** for mapping of custom operations. For details on that new frontend, see the :doc:`Frontend Extensions <openvino_docs_Extensibility_UG_Frontend_Extensions>` article.
+
+   The code described here has been **deprecated!** Do not use it to avoid working with a legacy solution. It will be kept for some time to ensure backwards compatibility, but **you should not use** it in contemporary applications.
+
+   This guide describes a deprecated TensorFlow conversion method. The guide on the new and recommended method, using a new frontend, can be found in the  :doc:`Frontend Extensions <openvino_docs_Extensibility_UG_Frontend_Extensions>` article. 
 
 This article describes Model Optimizer internals. Altering them may result in application instability, and in case of future changes to the API, lack of backward compatibility.
 
