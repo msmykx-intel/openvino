@@ -2,9 +2,9 @@
 
 @sphinxdirective
 
-.. warning::
+.. danger::
    
-   OpenVINO will move TensorFlow conversion from legacy python-based frontend to new C++ based frontend, therefore this extension guide won't be a recommended way for TensorFlow extension in Model Optimizer and will be marked as a deprecated solution. For details on the new frontend, see the :doc:`Frontend Extensions <openvino_docs_Extensibility_UG_Frontend_Extensions>` article.
+   Code described here is kept for backwards compatibility. OpenVINO will move TensorFlow conversion from legacy python-based frontend to new C++ based frontend, therefore **this extension guide won't be a recommended way** for TensorFlow extension in Model Optimizer and soon will be marked as a **deprecated solution**. User should use **Frontend Extension API** for mapping of custom operations. For details on that new frontend, see the :doc:`Frontend Extensions <openvino_docs_Extensibility_UG_Frontend_Extensions>` article.
 
 Model Optimizer provides various base classes to implement :ref:`Front Phase Transformations <mo_front_phase_transformations>`,
 :ref:`Middle Phase Transformations <mo_middle_phase_transformations>`, and :ref:`Back Phase Transformations <mo_back_phase_transformations>`.
