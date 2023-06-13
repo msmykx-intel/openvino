@@ -37,6 +37,12 @@ The software was validated on:
    sudo ./install_build_dependencies.sh
    ```
    > **NOTE**: By default, the build enables the OpenVINO Runtime GPU plugin to infer models on your Intel® Processor Graphics. This requires you to [Install Intel® Graphics Compute Runtime for OpenCL™ Driver package 23.13.26032.30](https://github.com/intel/compute-runtime/releases/tag/23.13.26032.30) before running the build. If you don't want to use the GPU plugin, use the `-DENABLE_INTEL_GPU=OFF` CMake build option and skip the installation of the Intel® Graphics Compute Runtime for OpenCL™ Driver.
+               
+               | Ubuntu | Driver Version |
+               | --- | ----------- |
+               | 22.04 | [23.13.26032.30](https://github.com/intel/compute-runtime/releases/tag/23.13.26032.30) |
+               | 20.04 | [22.24.23453](https://github.com/intel/compute-runtime/releases/tag/22.24.23453) |
+               | 18.04 | [21.38.21026](https://github.com/intel/compute-runtime/releases/tag/21.38.21026) |
 
 3. Create a build folder:
 ```sh
