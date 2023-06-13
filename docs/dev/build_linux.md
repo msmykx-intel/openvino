@@ -44,14 +44,15 @@ The software was validated on:
    ```
 
 3. Create a build folder:
-```sh
-  mkdir build && cd build
-```
+   ```sh
+     mkdir build && cd build
+   ```
+
 4. OpenVINO Runtime uses a CMake-based build system. In the created `build` directory, run `cmake` to fetch project dependencies and create Unix makefiles, then run `make` to build the project:
-```sh
-  cmake -DCMAKE_BUILD_TYPE=Release ..
-  make --jobs=$(nproc --all)
-```
+   ```sh
+     cmake -DCMAKE_BUILD_TYPE=Release ..
+     make --jobs=$(nproc --all)
+   ```
 The process may take some time to finish.
 
 ### Additional Build Options
