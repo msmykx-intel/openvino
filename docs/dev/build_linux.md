@@ -42,7 +42,7 @@ The software was validated on:
    ```sh
    sudo ./install_build_dependencies.sh
    ```
-   > **NOTE**: By default, the build enables the OpenVINO Runtime GPU plugin to infer models on your Intel® Processor Graphics. This requires you to Install Intel® Graphics Compute Runtime for OpenCL™ Driver package before running the build. Select a driver package from the table below depending on what version of Ubuntu you are installing on.
+   > **NOTE**: By default, the build enables the OpenVINO Runtime GPU plugin to infer models on your Intel® Processor Graphics. This requires you to install Intel® Graphics Compute Runtime for OpenCL™ Driver package before running the build. Select a driver package from the table below depending on what version of Ubuntu you are installing on.
    >  
    > | Ubuntu | Driver package |
    > | --- | ----------- |
