@@ -8,31 +8,35 @@ This guide provides steps on creating a Docker image with Intel® Distribution o
 System Requirements
 ###################
 
-.. tab:: Target Operating Systems with Python Versions
-  
-   +----------------------------------------------+-------------------------+
-   | Operating System                             | Included Python Version |
-   +==============================================+=========================+
-   | Ubuntu 18.04 long-term support (LTS), 64-bit |  3.8                    |
-   +----------------------------------------------+-------------------------+
-   | Ubuntu 20.04 long-term support (LTS), 64-bit |  3.8                    |
-   +----------------------------------------------+-------------------------+
-   | Red Hat Enterprise Linux 8, 64-bit           |  3.8                    |
-   +----------------------------------------------+-------------------------+
+.. tab-set::
 
-.. tab:: Host Operating Systems
-
-   * Linux
-   * Windows Subsystem for Linux 2 (WSL2) on CPU or GPU
-   * macOS on CPU only
+   .. tab-item:: Target Operating Systems with Python Versions
+      :sync: os_python
+     
+      +----------------------------------------------+-------------------------+
+      | Operating System                             | Included Python Version |
+      +==============================================+=========================+
+      | Ubuntu 18.04 long-term support (LTS), 64-bit |  3.8                    |
+      +----------------------------------------------+-------------------------+
+      | Ubuntu 20.04 long-term support (LTS), 64-bit |  3.8                    |
+      +----------------------------------------------+-------------------------+
+      | Red Hat Enterprise Linux 8, 64-bit           |  3.8                    |
+      +----------------------------------------------+-------------------------+
    
-   To launch a Linux image on WSL2 when trying to run inferences on a GPU, make sure that the following requirements are met:
- 
-   * Only Windows 10 with 21H2 update or above installed and Windows 11 are supported.
-   * Intel GPU driver for Windows, version 30.0.100.9684 or newer needs to be installed. For more details, refer to
-     `this article at intel.com <https://www.intel.com/content/www/us/en/artificial-intelligence/harness-the-power-of-intel-igpu-on-your-machine.html#articleparagraph_983312434>`__.
-   * Currently, the Docker images contain preinstalled recommended version of OpenCL Runtime with WSL2 support.
-
+   .. tab-item:: Host Operating Systems
+      :sync: host_os
+   
+      * Linux
+      * Windows Subsystem for Linux 2 (WSL2) on CPU or GPU
+      * macOS on CPU only
+      
+      To launch a Linux image on WSL2 when trying to run inferences on a GPU, make sure that the following requirements are met:
+    
+      * Only Windows 10 with 21H2 update or above installed and Windows 11 are supported.
+      * Intel GPU driver for Windows, version 30.0.100.9684 or newer needs to be installed. For more details, refer to
+        `this article at intel.com <https://www.intel.com/content/www/us/en/artificial-intelligence/harness-the-power-of-intel-igpu-on-your-machine.html#articleparagraph_983312434>`__.
+      * Currently, the Docker images contain preinstalled recommended version of OpenCL Runtime with WSL2 support.
+   
 
 Installation
 #############
