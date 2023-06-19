@@ -9,20 +9,24 @@ This guide provides steps for creating a Docker image with Intel® Distribution 
 System Requirements
 ####################
 
-.. tab:: Target Operating System with Python Versions
+.. tab-set::
 
-   +------------------------------------+--------------------------+
-   | Operating System                   | Supported Python Version |
-   +====================================+==========================+
-   | Windows Server Core base LTSC 2019 | 3.8                      |
-   +------------------------------------+--------------------------+
-   | Windows 10, version 20H2           | 3.8                      |
-   +------------------------------------+--------------------------+
-
-.. tab:: Host Operating Systems
-
-   * Windows 10, 64-bit Pro, Enterprise or Education (1607 Anniversary Update, Build 14393 or later) editions
-   * Windows Server 2016 or higher
+   .. tab-item:: Target Operating System with Python Versions
+      :sync: os_python
+   
+      +------------------------------------+--------------------------+
+      | Operating System                   | Supported Python Version |
+      +====================================+==========================+
+      | Windows Server Core base LTSC 2019 | 3.8                      |
+      +------------------------------------+--------------------------+
+      | Windows 10, version 20H2           | 3.8                      |
+      +------------------------------------+--------------------------+
+   
+   .. tab-item:: Host Operating Systems
+      :sync: host_os
+   
+      * Windows 10, 64-bit Pro, Enterprise or Education (1607 Anniversary Update, Build 14393 or later) editions
+      * Windows Server 2016 or higher
 
 
 Additional Requirements for GPU
