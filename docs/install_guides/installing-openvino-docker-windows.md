@@ -12,7 +12,7 @@ System Requirements
 .. tab-set::
 
    .. tab-item:: Target Operating System with Python Versions
-      :sync: os_python
+      :sync: os-py
    
       +------------------------------------+--------------------------+
       | Operating System                   | Supported Python Version |
@@ -23,7 +23,7 @@ System Requirements
       +------------------------------------+--------------------------+
    
    .. tab-item:: Host Operating Systems
-      :sync: host_os
+      :sync: host-os
    
       * Windows 10, 64-bit Pro, Enterprise or Education (1607 Anniversary Update, Build 14393 or later) editions
       * Windows Server 2016 or higher

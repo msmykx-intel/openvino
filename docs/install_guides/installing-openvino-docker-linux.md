@@ -11,7 +11,7 @@ System Requirements
 .. tab-set::
 
    .. tab-item:: Target Operating Systems with Python Versions
-      :sync: os_python
+      :sync: os-py
      
       +----------------------------------------------+-------------------------+
       | Operating System                             | Included Python Version |
@@ -24,7 +24,7 @@ System Requirements
       +----------------------------------------------+-------------------------+
    
    .. tab-item:: Host Operating Systems
-      :sync: host_os
+      :sync: host-os
    
       * Linux
       * Windows Subsystem for Linux 2 (WSL2) on CPU or GPU
