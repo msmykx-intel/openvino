@@ -24,7 +24,9 @@
       :ref-type: doc
       :class: ov-homepage-banner-btn
       :color: primary
+      :outline:
 
+      Get started
 
 .. rst-class:: openvino-diagram
 
@@ -114,8 +116,8 @@ Feature Overview
    :maxdepth: 2
    :hidden:
 
-   GET STARTED <get_started>
    LEARN OPENVINO <learn_openvino>
+   GET STARTED <get_started>
    OPENVINO WORKFLOW <openvino_workflow>
    DOCUMENTATION <documentation>
    MODEL ZOO <model_zoo>
