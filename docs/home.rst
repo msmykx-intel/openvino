@@ -20,7 +20,7 @@
    | An open-source toolkit for optimizing and deploying deep learning models.
    | Boost your AI deep-learning inference performance!
    
-   .. button-ref::  get_started
+   .. button-ref::  get_started_b
       :ref-type: doc
       :class: ov-homepage-banner-btn
       :color: primary
