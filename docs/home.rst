@@ -116,7 +116,7 @@ Feature Overview
    :maxdepth: 2
    :hidden:
 
-   GET STARTED <get_started>
+   GET  STARTED <get_started>
    LEARN OPENVINO <learn_openvino>
    OPENVINO WORKFLOW <openvino_workflow>
    DOCUMENTATION <documentation>
