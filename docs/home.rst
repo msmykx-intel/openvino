@@ -24,7 +24,9 @@
       :ref-type: doc
       :class: ov-homepage-banner-btn
       :color: primary
+      :outline:
 
+      Get started
 
 .. rst-class:: openvino-diagram
 
