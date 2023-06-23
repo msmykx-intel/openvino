@@ -20,13 +20,11 @@
    | An open-source toolkit for optimizing and deploying deep learning models.
    | Boost your AI deep-learning inference performance!
    
-   .. button-ref::  get_started_b
+   .. button-ref::  get_started
       :ref-type: doc
       :class: ov-homepage-banner-btn
       :color: primary
-      :outline:
 
-      Get started
 
 .. rst-class:: openvino-diagram
 
