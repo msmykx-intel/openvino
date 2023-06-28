@@ -13,7 +13,7 @@ Check the versions of OpenVINO Runtime and Development Tools
   .. tab-set::
 
       .. tab-item:: Python
-          :sync: mo-python-api
+          :sync: py
 
           .. code-block:: python
 
@@ -21,7 +21,7 @@ Check the versions of OpenVINO Runtime and Development Tools
              ov_model = convert_model(version=True)
 
       .. tab-item:: CLI
-          :sync: cli-tool
+          :sync: cli
 
           .. code-block:: sh
 

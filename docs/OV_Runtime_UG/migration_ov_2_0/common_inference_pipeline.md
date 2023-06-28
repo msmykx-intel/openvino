@@ -323,7 +323,7 @@ The Inference Engine API fills inputs with data of the ``I32`` precision (**not*
 .. tab-set::
 
    .. tab-item:: IR v10
-      :sync: irv10
+      :sync: ir-v10
 
       .. tab-set::
 
@@ -349,7 +349,7 @@ The Inference Engine API fills inputs with data of the ``I32`` precision (**not*
                :fragment: ie:get_input_tensor
 
    .. tab-item:: IR v11
-      :sync: irv11
+      :sync: ir-v11
 
       .. tab-set::
 
@@ -435,7 +435,7 @@ API 2.0 fills inputs with data of the ``I64`` precision (aligned with the origin
 .. tab-set::
 
    .. tab-item:: IR v10
-      :sync: irv10
+      :sync: ir-v10
 
       .. tab-set::
 
@@ -461,7 +461,7 @@ API 2.0 fills inputs with data of the ``I64`` precision (aligned with the origin
                :fragment: ov_api_2_0:get_input_tensor_v10
 
    .. tab-item:: IR v11
-      :sync: irv11
+      :sync: ir-v11
 
       .. tab-set::
 
@@ -514,7 +514,7 @@ API 2.0 fills inputs with data of the ``I64`` precision (aligned with the origin
 
 
    .. tab-item:: Model created in code
-      :sync: model_created_in_code
+      :sync: model-created-in-code
 
       .. tab-set::
 
@@ -667,7 +667,7 @@ The Inference Engine API processes outputs as they are of the ``I32`` precision 
 .. tab-set::
 
    .. tab-item:: IR v10
-      :sync: irv10
+      :sync: ir-v10
 
       .. tab-set::
 
@@ -693,7 +693,7 @@ The Inference Engine API processes outputs as they are of the ``I32`` precision 
                :fragment: ie:get_output_tensor
 
    .. tab-item:: IR v11
-      :sync: irv11
+      :sync: ir-v11
 
       .. tab-set::
 
@@ -782,7 +782,7 @@ API 2.0 processes outputs as they are of:
 .. tab-set::
 
    .. tab-item:: IR v10
-      :sync: irv10
+      :sync: ir-v10
 
       .. tab-set::
 
@@ -808,7 +808,7 @@ API 2.0 processes outputs as they are of:
                :fragment: ov_api_2_0:get_output_tensor_v10
 
    .. tab-item:: IR v11
-      :sync: irv11
+      :sync: ir-v11
 
       .. tab-set::
 
@@ -861,7 +861,7 @@ API 2.0 processes outputs as they are of:
 
 
    .. tab-item:: Model created in code
-      :sync: model
+      :sync: model-created-in-code
 
       .. tab-set::
 

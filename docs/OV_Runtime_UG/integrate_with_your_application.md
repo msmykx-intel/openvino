@@ -104,28 +104,28 @@ Compile the model for a specific device using ``ov::Core::compile_model()``:
                 :fragment: [part2_2]
 
           .. tab-item:: PaddlePaddle
-             :sync: pdpd
+             :sync: paddlepaddle
 
              .. doxygensnippet:: docs/snippets/src/main.cpp
                 :language: cpp
                 :fragment: [part2_3]
 
           .. tab-item:: TensorFlow
-             :sync: tf
+             :sync: tensorflow
 
              .. doxygensnippet:: docs/snippets/src/main.cpp
                 :language: cpp
                 :fragment: [part2_4]
 
           .. tab-item:: TensorFlow Lite
-             :sync: tf_lite
+             :sync: tensorflow_lite
 
              .. doxygensnippet:: docs/snippets/src/main.cpp
                 :language: cpp
                 :fragment: [part2_5]
 
           .. tab-item:: ov::Model
-             :sync: ovmodel
+             :sync: openvinomodel
 
              .. doxygensnippet:: docs/snippets/src/main.cpp
                 :language: cpp
@@ -151,28 +151,28 @@ Compile the model for a specific device using ``ov::Core::compile_model()``:
                 :fragment: [part2_2]
 
           .. tab-item:: PaddlePaddle
-             :sync: pdpd
+             :sync: paddlepaddle
 
              .. doxygensnippet:: docs/snippets/src/main.py
                 :language: python
                 :fragment: [part2_3]
 
           .. tab-item:: TensorFlow
-             :sync: tf
+             :sync: tensorflow
 
              .. doxygensnippet:: docs/snippets/src/main.py
                 :language: python
                 :fragment: [part2_4]
 
           .. tab-item:: TensorFlow Lite
-             :sync: tf_lite
+             :sync: tensorflow_lite
 
              .. doxygensnippet:: docs/snippets/src/main.py
                 :language: python
                 :fragment: [part2_5]
 
           .. tab-item:: ov::Model
-             :sync: ovmodel
+             :sync: openvinomodel
 
              .. doxygensnippet:: docs/snippets/src/main.py
                 :language: python
@@ -198,28 +198,28 @@ Compile the model for a specific device using ``ov::Core::compile_model()``:
                 :fragment: [part2_2]
 
           .. tab-item:: PaddlePaddle
-             :sync: pdpd
+             :sync: paddlepaddle
 
              .. doxygensnippet:: docs/snippets/src/main.c
                 :language: cpp
                 :fragment: [part2_3]
 
           .. tab-item:: TensorFlow
-             :sync: tf
+             :sync: tensorflow
 
              .. doxygensnippet:: docs/snippets/src/main.c
                 :language: cpp
                 :fragment: [part2_4]
 
           .. tab-item:: TensorFlow Lite
-             :sync: tf_lite
+             :sync: tensorflow_lite
 
              .. doxygensnippet:: docs/snippets/src/main.c
                 :language: cpp
                 :fragment: [part2_5]
 
           .. tab-item:: ov::Model
-             :sync: ovmodel
+             :sync: openvinomodel
 
              .. doxygensnippet:: docs/snippets/src/main.c
                 :language: cpp
