@@ -211,7 +211,7 @@ Getting Information
        .. tab-set::
 
           .. tab-item:: Device Configuration
-             :sync: device-config
+             :sync: device-configuration
 
              .. doxygensnippet:: docs/snippets/ov_properties_migration.cpp
                  :language: cpp
@@ -244,7 +244,7 @@ Getting Information
        .. tab-set::
 
           .. tab-item:: Device Configuration
-             :sync: device-config
+             :sync: device-configuration
 
              .. doxygensnippet:: docs/snippets/ov_properties_migration.py
                  :language: python
@@ -277,7 +277,7 @@ Getting Information
        .. tab-set::
 
           .. tab-item:: Device Configuration
-             :sync: device-config
+             :sync: device-configuration
 
              .. doxygensnippet:: docs/snippets/ov_properties_migration.c
                  :language: c
@@ -316,7 +316,7 @@ Getting Information
        .. tab-set::
 
           .. tab-item:: Device Configuration
-             :sync: device-config
+             :sync: device-configuration
 
              .. doxygensnippet:: docs/snippets/ov_properties_migration.cpp
                  :language: cpp
@@ -349,7 +349,7 @@ Getting Information
        .. tab-set::
 
           .. tab-item:: Device Configuration
-             :sync: device-config
+             :sync: device-configuration
 
              .. doxygensnippet:: docs/snippets/ov_properties_migration.py
                  :language: python
@@ -382,7 +382,7 @@ Getting Information
        .. tab-set::
 
           .. tab-item:: Device Configuration
-             :sync: device-config
+             :sync: device-configuration
 
              .. doxygensnippet:: docs/snippets/ov_properties_migration.c
                  :language: c
