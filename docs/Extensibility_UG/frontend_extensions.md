@@ -88,19 +88,19 @@ In this case, you can directly say that 'MyRelu' -> ``Relu`` mapping should be u
 
 .. tab-set::
 
-   .. tab-item:: C++
-      :sync: cpp
-
-      .. doxygensnippet:: docs/snippets/ov_extensions.cpp
-         :language: cpp
-         :fragment: [frontend_extension_MyRelu]
-
    .. tab-item:: Python
       :sync: py
    
       .. doxygensnippet:: docs/snippets/ov_extensions.py
          :language: python
          :fragment: [py_frontend_extension_MyRelu]
+
+   .. tab-item:: C++
+      :sync: cpp
+
+      .. doxygensnippet:: docs/snippets/ov_extensions.cpp
+         :language: cpp
+         :fragment: [frontend_extension_MyRelu]
 
 
 In the resulting converted OpenVINO model, “MyRelu” operation will be replaced by the standard operation 
@@ -329,13 +329,6 @@ from ONNX according to the formula: ``ThresholdedRelu(x, alpha) -> Multiply(x, C
 
 .. tab-set::
 
-   .. tab-item:: C++
-      :sync: cpp
- 
-      .. doxygensnippet:: docs/snippets/ov_extensions.cpp
-         :language: cpp
-         :fragment: [frontend_extension_ThresholdedReLU_header]
-
    .. tab-item:: Python
       :sync: py
 
@@ -343,14 +336,14 @@ from ONNX according to the formula: ``ThresholdedRelu(x, alpha) -> Multiply(x, C
          :language: python
          :fragment: [py_frontend_extension_ThresholdedReLU_header]
 
-.. tab-set::
-
    .. tab-item:: C++
       :sync: cpp
  
       .. doxygensnippet:: docs/snippets/ov_extensions.cpp
          :language: cpp
-         :fragment: [frontend_extension_ThresholdedReLU]
+         :fragment: [frontend_extension_ThresholdedReLU_header]
+
+.. tab-set::
 
    .. tab-item:: Python
       :sync: py
@@ -358,6 +351,13 @@ from ONNX according to the formula: ``ThresholdedRelu(x, alpha) -> Multiply(x, C
       .. doxygensnippet:: docs/snippets/ov_extensions.py
          :language: python
          :fragment: [py_frontend_extension_ThresholdedReLU]
+
+   .. tab-item:: C++
+      :sync: cpp
+ 
+      .. doxygensnippet:: docs/snippets/ov_extensions.cpp
+         :language: cpp
+         :fragment: [frontend_extension_ThresholdedReLU]
 
 
 The next example shows how to use ``ConversionExtension`` to convert PyTorch 

@@ -80,17 +80,6 @@ Therefore, there is no need for explicitly switching between GNA and CPU.
 
 .. tab-set::
 
-   .. tab-item:: C++
-      :sync: cpp
-
-      .. doxygensnippet:: docs/snippets/gna/configure.cpp
-         :language: cpp
-         :fragment: [include]
-
-      .. doxygensnippet:: docs/snippets/gna/configure.cpp
-         :language: cpp
-         :fragment: [ov_gna_exec_mode_hw_with_sw_fback]
-
    .. tab-item:: Python
       :sync: py
 
@@ -100,6 +89,17 @@ Therefore, there is no need for explicitly switching between GNA and CPU.
 
       .. doxygensnippet:: docs/snippets/gna/configure.py
          :language: py
+         :fragment: [ov_gna_exec_mode_hw_with_sw_fback]
+
+   .. tab-item:: C++
+      :sync: cpp
+
+      .. doxygensnippet:: docs/snippets/gna/configure.cpp
+         :language: cpp
+         :fragment: [include]
+
+      .. doxygensnippet:: docs/snippets/gna/configure.cpp
+         :language: cpp
          :fragment: [ov_gna_exec_mode_hw_with_sw_fback]
 
 
@@ -158,18 +158,18 @@ To export a model for a specific version of GNA HW, use the ``ov::intel_gna::com
 
 .. tab-set::
 
-   .. tab-item:: C++
-      :sync: cpp
-
-      .. doxygensnippet:: docs/snippets/gna/import_export.cpp
-         :language: cpp
-         :fragment: [ov_gna_export]
-
    .. tab-item:: Python
       :sync: py
 
       .. doxygensnippet:: docs/snippets/gna/import_export.py
          :language: py
+         :fragment: [ov_gna_export]
+
+   .. tab-item:: C++
+      :sync: cpp
+
+      .. doxygensnippet:: docs/snippets/gna/import_export.cpp
+         :language: cpp
          :fragment: [ov_gna_export]
 
 
@@ -178,18 +178,18 @@ Import model:
 
 .. tab-set::
 
-   .. tab-item:: C++
-      :sync: cpp
-
-      .. doxygensnippet:: docs/snippets/gna/import_export.cpp
-         :language: cpp
-         :fragment: [ov_gna_import]
-
    .. tab-item:: Python
       :sync: py
 
       .. doxygensnippet:: docs/snippets/gna/import_export.py
          :language: py
+         :fragment: [ov_gna_import]
+
+   .. tab-item:: C++
+      :sync: cpp
+
+      .. doxygensnippet:: docs/snippets/gna/import_export.cpp
+         :language: cpp
          :fragment: [ov_gna_import]
 
 
@@ -215,15 +215,15 @@ With the following methods, you can collect profiling information with various p
 
 .. tab-set::
 
-   .. tab-item:: C++
-      :sync: cpp
-   
-      ``ov::InferRequest::get_profiling_info``
-   
    .. tab-item:: Python
       :sync: py
    
       ``openvino.runtime.InferRequest.get_profiling_info``
+
+   .. tab-item:: C++
+      :sync: cpp
+   
+      ``ov::InferRequest::get_profiling_info``
 
 
 The current GNA implementation calculates counters for the whole utterance scoring and does not provide per-layer information. 
@@ -363,17 +363,6 @@ To set the layout of model inputs in runtime, use the :doc:`Optimize Preprocessi
 
 .. tab-set::
 
-   .. tab-item:: C++
-      :sync: cpp
-
-      .. doxygensnippet:: docs/snippets/gna/set_batch.cpp
-         :language: cpp
-         :fragment: [include]
-      
-      .. doxygensnippet:: docs/snippets/gna/set_batch.cpp
-         :language: cpp
-         :fragment: [ov_gna_set_nc_layout]
-
    .. tab-item:: Python
       :sync: py
 
@@ -385,23 +374,34 @@ To set the layout of model inputs in runtime, use the :doc:`Optimize Preprocessi
          :language: py
          :fragment: [ov_gna_set_nc_layout]
 
-
-then set batch size:
-
-.. tab-set::
-
    .. tab-item:: C++
       :sync: cpp
 
       .. doxygensnippet:: docs/snippets/gna/set_batch.cpp
          :language: cpp
-         :fragment: [ov_gna_set_batch_size]
+         :fragment: [include]
+      
+      .. doxygensnippet:: docs/snippets/gna/set_batch.cpp
+         :language: cpp
+         :fragment: [ov_gna_set_nc_layout]
+
+
+then set batch size:
+
+.. tab-set::
 
    .. tab-item:: Python
       :sync: py
 
       .. doxygensnippet:: docs/snippets/gna/set_batch.py
          :language: py
+         :fragment: [ov_gna_set_batch_size]
+
+   .. tab-item:: C++
+      :sync: cpp
+
+      .. doxygensnippet:: docs/snippets/gna/set_batch.cpp
+         :language: cpp
          :fragment: [ov_gna_set_batch_size]
 
 
