@@ -61,7 +61,8 @@ Particular cases:
 
 Example: Normalization over channel dimension for ``NCHW`` layout
 
-.. code-block::  cpp
+.. code-block:: xml
+   :force:
 
     <layer id="1" type="NormalizeL2" ...>
         <data eps="1e-8" eps_mode="add"/>
@@ -89,7 +90,8 @@ Example: Normalization over channel dimension for ``NCHW`` layout
 
 Example: Normalization over channel and spatial dimensions for ``NCHW`` layout
 
-.. code-block::  cpp
+.. code-block:: xml
+   :force:
 
     <layer id="1" type="NormalizeL2" ...>
         <data eps="1e-8" eps_mode="add"/>

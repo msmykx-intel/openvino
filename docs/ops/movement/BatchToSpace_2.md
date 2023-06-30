@@ -72,7 +72,8 @@ Where
 
 Example: 2D input tensor ``data``
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
    
    <layer type="BatchToSpace" ...>
        <input>
@@ -100,7 +101,8 @@ Example: 2D input tensor ``data``
 
 Example: 5D input tensor ``data``
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
    
    <layer type="BatchToSpace" ...>
        <input>

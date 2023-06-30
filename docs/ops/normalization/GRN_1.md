@@ -40,7 +40,8 @@
 
 **Example**
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
    <layer ... type="GRN">
        <data bias="1e-4"/>

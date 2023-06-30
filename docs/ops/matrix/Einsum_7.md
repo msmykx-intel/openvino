@@ -179,7 +179,8 @@ Example 8 shows how *Einsum* operates with an equation containing both capital a
 
 **Examples**
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
    
    <layer ... type="Einsum" version="opset7">
        <data equation="ij,ij->i"/>
@@ -200,7 +201,8 @@ Example 8 shows how *Einsum* operates with an equation containing both capital a
        </output>
    </layer>
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
    
    <layer ... type="Einsum" version="opset7">
        <data equation="ab...,ac...,ade->...bc"/>

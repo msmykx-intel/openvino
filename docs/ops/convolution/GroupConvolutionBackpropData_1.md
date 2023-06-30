@@ -106,7 +106,8 @@ is derived from the kernel shape.
 
 1D GroupConvolutionBackpropData
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
    <layer id="5" name="upsampling_node" type="GroupConvolutionBackpropData">
        <data dilations="1" pads_begin="1" pads_end="1" strides="2"/>
@@ -135,7 +136,8 @@ is derived from the kernel shape.
 
 2D GroupConvolutionBackpropData
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
    <layer id="5" name="upsampling_node" type="GroupConvolutionBackpropData">
        <data dilations="1,1" pads_begin="1,1" pads_end="1,1" strides="2,2"/>
@@ -167,7 +169,8 @@ is derived from the kernel shape.
 
 3D GroupConvolutionBackpropData
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
    <layer id="5" name="upsampling_node" type="GroupConvolutionBackpropData">
        <data dilations="1,1,1" pads_begin="1,1,1" pads_end="1,1,1" strides="2,2,2"/>

@@ -38,7 +38,8 @@ Where D is the rank of input tensor `data`. The sum of elements in ``split_lengt
 
 **Examples**
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
     <layer id="1" type="VariadicSplit" ...>
         <input>
@@ -77,7 +78,8 @@ Where D is the rank of input tensor `data`. The sum of elements in ``split_lengt
     </layer>
 
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
     <layer id="1" type="VariadicSplit" ...>
         <input>

@@ -68,7 +68,8 @@ No attributes available.
 
 **Example**
 
-.. code-block:: cpp 
+.. code-block:: xml
+   :force:
 
     <layer type="SpaceToBatch" ...>
         <input>

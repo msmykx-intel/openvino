@@ -49,7 +49,8 @@ Particular cases:
 
 **Examples**
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
     <layer id="1" type="ReduceL2" ...>
         <data keep_dims="true" />
@@ -75,7 +76,8 @@ Particular cases:
     </layer>
 
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
     <layer id="1" type="ReduceL2" ...>
         <data keep_dims="false" />
@@ -99,7 +101,8 @@ Particular cases:
     </layer>
 
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
     <layer id="1" type="ReduceL2" ...>
         <data keep_dims="false" />
@@ -124,7 +127,8 @@ Particular cases:
     </layer>
 
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
     <layer id="1" type="ReduceL2" ...>
         <data keep_dims="false" />

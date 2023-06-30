@@ -50,7 +50,8 @@ Another mathematical representation that may be found in other references:
 
 Example: 1D input tensor ``data``
 
-.. code-block::  cpp  
+.. code-block:: xml
+   :force:
 
     <layer ... type="Prelu">
         <input>
@@ -71,7 +72,8 @@ Example: 1D input tensor ``data``
 
 Example: 2D input tensor ``data``
 
-.. code-block::  cpp  
+.. code-block:: xml
+   :force:
 
     <layer ... type="Prelu">
         <input>
@@ -93,7 +95,8 @@ Example: 2D input tensor ``data``
 
 Example: 4D input tensor ``data``
 
-.. code-block::  cpp  
+.. code-block:: xml
+   :force:  
 
     <layer ... type="Prelu">
         <input>

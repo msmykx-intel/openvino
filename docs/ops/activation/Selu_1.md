@@ -46,7 +46,8 @@ Another mathematical representation that may be found in other references:
 
 **Example**
 
-.. code-block::  cpp 
+.. code-block::  xml
+   :force:
 
     <layer ... type="Selu">
         <input>

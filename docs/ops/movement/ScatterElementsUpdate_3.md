@@ -52,7 +52,8 @@ The value can be in range ``[-r, r - 1]`` where ``r`` is the rank of ``data``. *
 
 **Example**
 
-.. code-block:: cpp  
+.. code-block:: xml
+   :force:
 
     <layer ... type="ScatterElementsUpdate">
         <input>

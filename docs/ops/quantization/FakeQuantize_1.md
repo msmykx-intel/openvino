@@ -22,7 +22,8 @@ specify minimum and maximum quantized values at the output.
 
 Each element of the output is defined as the result of the following expression:
 
-.. code-block:: python
+.. code-block:: py
+   :force:
 
    if x <= min(input_low, input_high):
        output = output_low
@@ -72,7 +73,8 @@ Each element of the output is defined as the result of the following expression:
 
 **Example**
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
    <layer … type="FakeQuantize"…>
        <data levels="2"/>

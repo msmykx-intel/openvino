@@ -35,7 +35,8 @@
 
 *Example 1: squeeze 4D tensor to a 2D tensor*
 
-.. code-block:: cpp 
+.. code-block:: xml
+   :force:
 
     <layer ... type="Squeeze">
         <input>
@@ -61,7 +62,8 @@
 
 *Example 2: squeeze 1D tensor with 1 element to a 0D tensor (constant)*
 
-.. code-block:: cpp 
+.. code-block:: xml
+   :force:
 
     <layer ... type="Squeeze">
         <input>

@@ -55,7 +55,8 @@ The output is calculated following this formula:
 
 **Examples**
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
    
    <layer ... type="AdaptiveMaxPool" ... >
        <data output_type="i64"/>

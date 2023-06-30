@@ -204,7 +204,8 @@ Mixed pads example:
 
 **Example**: constant mode (positive pads)
 
-.. code-block::  cpp  
+.. code-block:: xml
+   :force:
 
     <layer ... type="Pad" ...>
         <data pad_mode="constant"/>
@@ -239,7 +240,8 @@ Mixed pads example:
 
 **Example**: constant mode (positive and negative pads)
 
-.. code-block::  cpp  
+.. code-block:: xml
+   :force: 
 
     <layer ... type="Pad" ...>
         <data pad_mode="constant"/>
@@ -274,7 +276,8 @@ Mixed pads example:
 
 **Example**: edge mode
 
-.. code-block::  cpp   
+.. code-block:: xml
+   :force: 
 
     <layer ... type="Pad" ...>
         <data pad_mode="edge"/>

@@ -71,7 +71,8 @@ Number of elements in ``start``, ``stop``, ``step``, and ``axes`` inputs are req
 
 Example 1: basic slicing
 
-.. code-block:: cpp 
+.. code-block:: xml
+   :force:
 
   <layer id="1" type="Slice" ...>
       <input>
@@ -101,7 +102,8 @@ Example 1: basic slicing
 
 Example 2: basic slicing, ``axes`` default
 
-.. code-block:: cpp 
+.. code-block:: xml
+   :force:
 
   <layer id="1" type="Slice" ...>
       <input>
@@ -128,7 +130,8 @@ Example 2: basic slicing, ``axes`` default
 
 Example 3: basic slicing, ``step: [2]``
 
-.. code-block:: cpp 
+.. code-block:: xml
+   :force:
 
   <layer id="1" type="Slice" ...>
       <input>
@@ -157,7 +160,8 @@ Example 3: basic slicing, ``step: [2]``
 
 Example 4: ``start`` and ``stop`` out of the dimension size, ``step: [1]``
 
-.. code-block:: cpp 
+.. code-block:: xml
+   :force:
 
   <layer id="1" type="Slice" ...>
       <input>
@@ -187,7 +191,8 @@ Example 4: ``start`` and ``stop`` out of the dimension size, ``step: [1]``
 
 Example 5: slicing backward all elements, ``step: [-1]``, ``stop: [-11]``
 
-.. code-block:: cpp 
+.. code-block:: xml
+   :force:
 
   <layer id="1" type="Slice" ...>
       <input>
@@ -217,7 +222,8 @@ Example 5: slicing backward all elements, ``step: [-1]``, ``stop: [-11]``
 
 Example 6: slicing backward, ``step: [-1]``, ``stop: [0]``
 
-.. code-block:: cpp 
+.. code-block:: xml
+   :force:
 
   <layer id="1" type="Slice" ...>
       <input>
@@ -247,7 +253,8 @@ Example 6: slicing backward, ``step: [-1]``, ``stop: [0]``
 
 Example 7: slicing backward, ``step: [-1]``, ``stop: [-10]``
 
-.. code-block:: cpp  
+.. code-block:: xml
+   :force:
 
   <layer id="1" type="Slice" ...>
       <input>
@@ -277,7 +284,8 @@ Example 7: slicing backward, ``step: [-1]``, ``stop: [-10]``
 
 Example 8: slicing backward, ``step: [-2]``
 
-.. code-block:: cpp 
+.. code-block:: xml
+   :force:
 
   <layer id="1" type="Slice" ...>
       <input>
@@ -307,7 +315,8 @@ Example 8: slicing backward, ``step: [-2]``
 
 Example 9: ``start`` and ``stop`` out of the dimension size, slicing backward
 
-.. code-block:: cpp 
+.. code-block:: xml
+   :force:
 
   <layer id="1" type="Slice" ...>
       <input>
@@ -337,7 +346,8 @@ Example 9: ``start`` and ``stop`` out of the dimension size, slicing backward
 
 Example 10: slicing 2D tensor, all axes specified
 
-.. code-block:: cpp 
+.. code-block:: xml
+   :force:
 
   <layer id="1" type="Slice" ...>
       <input>
@@ -369,7 +379,8 @@ Example 10: slicing 2D tensor, all axes specified
 
 Example 11: slicing 3D tensor, all axes specified
 
-.. code-block:: cpp 
+.. code-block:: xml
+   :force:
 
   <layer id="1" type="Slice" ...>
       <input>
@@ -402,7 +413,8 @@ Example 11: slicing 3D tensor, all axes specified
 
 Example 12: slicing 3D tensor, last axes default
 
-.. code-block:: cpp 
+.. code-block:: xml
+   :force:
 
   <layer id="1" type="Slice" ...>
       <input>

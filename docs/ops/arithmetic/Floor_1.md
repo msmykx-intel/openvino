@@ -35,7 +35,8 @@ element in the output tensor with the following formula:
 
 *Example 1*
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
    <layer ... type="Floor">
        <input>

@@ -31,7 +31,8 @@
 
 **Examples**
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
    
    <layer id="1" type="Concat">
        <data axis="1" />
@@ -66,7 +67,8 @@
    </layer>
 
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
    
    <layer id="1" type="Concat">
        <data axis="-3" />

@@ -66,7 +66,8 @@ Input NV12 image tensor shall have ``NHWC (also known as NYXC)`` layout and can 
 
 *Example 1*
 
-.. code-block::  cpp 
+.. code-block:: xml
+   :force:
 
     <layer ... type="NV12toRGB">
         <input>
@@ -90,7 +91,8 @@ Input NV12 image tensor shall have ``NHWC (also known as NYXC)`` layout and can 
 
 *Example 2*
 
-.. code-block::  cpp 
+.. code-block:: xml
+   :force:
 
     <layer ... type="NV12toRGB">
         <input>

@@ -35,7 +35,8 @@ The HSwish operation is introduced in the following `article <https://arxiv.org/
 
 **Example**
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
    <layer ... type="HSwish">
        <input>

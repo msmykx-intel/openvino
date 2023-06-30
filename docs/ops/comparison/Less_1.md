@@ -50,7 +50,8 @@ After broadcasting *Less* does the following with the input tensors *a* and *b*:
 
 *Example 1*
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
    <layer ... type="Less">
        <input>
@@ -74,7 +75,8 @@ After broadcasting *Less* does the following with the input tensors *a* and *b*:
 
 *Example 2: broadcast*
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
    <layer ... type="Less">
        <input>

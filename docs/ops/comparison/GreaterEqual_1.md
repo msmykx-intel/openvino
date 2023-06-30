@@ -55,7 +55,8 @@ After broadcasting, *GreaterEqual* does the following with the input tensors *a*
 
 *Example 1: no broadcast*
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
    <layer ... type="GreaterEqual">
        <input>
@@ -79,7 +80,8 @@ After broadcasting, *GreaterEqual* does the following with the input tensors *a*
 
 *Example 2: numpy broadcast*
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
    <layer ... type="GreaterEqual">
        <input>

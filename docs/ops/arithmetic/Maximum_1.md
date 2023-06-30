@@ -49,7 +49,8 @@ After broadcasting *Maximum* does the following with the input tensors *a* and *
 
 *Example 1 - no broadcasting*
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
    <layer ... type="Maximum">
        <data auto_broadcast="none"/>
@@ -74,7 +75,8 @@ After broadcasting *Maximum* does the following with the input tensors *a* and *
 
 *Example 2: numpy broadcasting*
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
    <layer ... type="Maximum">
        <data auto_broadcast="numpy"/>

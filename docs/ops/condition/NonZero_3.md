@@ -42,7 +42,8 @@
 
 **Example**
 
-.. code-block::  cpp
+.. code-block:: xml
+   :force:
 
     <layer ... type="NonZero">
         <data output_type="i64"/>

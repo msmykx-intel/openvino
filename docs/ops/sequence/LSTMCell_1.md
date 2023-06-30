@@ -85,7 +85,8 @@
 
 **Example**
 
-.. code-block:: cpp
+.. code-block:: xml
+   :force:
 
    <layer ... type="LSTMCell" ...>
        <data hidden_size="128"/>
