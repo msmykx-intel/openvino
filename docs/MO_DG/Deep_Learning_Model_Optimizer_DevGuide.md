@@ -23,7 +23,8 @@ To convert a model to OpenVINO model format (``ov.Model``), you can use the foll
     .. tab-item:: Python
        :sync: py
 
-       .. code-block:: python
+       .. code-block:: py
+          :force:
 
           from openvino.tools.mo import convert_model
           ov_model = convert_model(INPUT_MODEL)
@@ -58,7 +59,8 @@ To get the full list of conversion parameters, run the following command:
     .. tab-item:: Python
        :sync: py
 
-       .. code-block:: python
+       .. code-block:: py
+          :force:
 
           from openvino.tools.mo import convert_model
           ov_model = convert_model(help=True)
@@ -83,7 +85,8 @@ Below is a list of separate examples for different frameworks and model conversi
        .. tab-item:: Python
           :sync: py
 
-          .. code-block:: python
+          .. code-block:: py
+             :force:
 
              from openvino.tools.mo import convert_model
              ov_model = convert_model("MobileNet.pb")
@@ -103,7 +106,8 @@ Below is a list of separate examples for different frameworks and model conversi
        .. tab-item:: Python
           :sync: py
 
-          .. code-block:: python
+          .. code-block:: py
+             :force:
 
              from openvino.tools.mo import convert_model
              ov_model = convert_model("BERT", input_shape=[[2,30],[2,30],[2,30]])
@@ -125,7 +129,8 @@ Below is a list of separate examples for different frameworks and model conversi
        .. tab-item:: Python
           :sync: py
 
-          .. code-block:: python
+          .. code-block:: py
+             :force:
 
              from openvino.tools.mo import convert_model
              ov_model = convert_model("ocr.onnx", output="probabilities")
@@ -151,7 +156,8 @@ Below is a list of separate examples for different frameworks and model conversi
        .. tab-item:: Python
           :sync: py
 
-          .. code-block:: python
+          .. code-block:: py
+             :force:
 
              from openvino.tools.mo import convert_model
              ov_model = convert_model("unet.pdmodel", mean_values=[123,117,104], scale=255)
