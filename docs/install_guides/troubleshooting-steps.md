@@ -20,7 +20,7 @@ Check the versions of OpenVINO Runtime and Development Tools
       .. tab-item:: Python
           :sync: mo-python-api
 
-          .. code-block:: python
+          .. code-block:: py
 
              from openvino.tools.mo import convert_model
              ov_model = convert_model(version=True)
