@@ -3,9 +3,15 @@
 @sphinxdirective
 
 .. meta::
-   :description: A collection of troubleshooting steps and solutions to possible 
-                 problems that may occur during the installation and configuration 
-                 of OpenVINO™ on your system.
+   :description: A collection of troubleshooting steps and solutions to possible problems that may occur during the installation and configuration of OpenVINO™ on your system.
+   :application-name: Test
+   :author: msmykx Intel
+   :generator: OpenVINO 2023.0
+   :keywords: OpenVINO, troublshooting, installation, guide, configuration
+   :referrer: no-referrer
+   :theme-color: #3c790a
+   :color-scheme: light
+   
 
 
 .. _troubleshooting guide for install:
