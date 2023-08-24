@@ -11,7 +11,7 @@
    :referrer: no-referrer
    :theme-color: #3c790a
    :color-scheme: light
-   
+   :test: test value
 
 
 .. _troubleshooting guide for install:
