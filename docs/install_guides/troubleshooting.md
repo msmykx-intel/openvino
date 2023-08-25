@@ -12,7 +12,7 @@
    :theme-color: #3c790a
    :color-scheme: light
    :test: test value
-   :random item without dash: value
+   :random_item_with_underlines: value
    :random_item_with_underlines: value
    :__: value
 
