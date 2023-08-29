@@ -1,4 +1,4 @@
-# OpenVINO PyTorch 2.0 - torch.compile() backend {#pytorch_2_0_torch_compile}
+# PyTorch Deployment via "torch.compile" {#pytorch_2_0_torch_compile}
 
 @sphinxdirective
 
@@ -20,7 +20,14 @@ By default, Torch code runs in eager-mode, but with the use of ``torch.compile``
 How to Use
 #################
 
-To use ``torch.compile``, you need to add an import statement and define one of the two available backends:
+To use ``torch.compile``, you need to add an import statement and define one of the two available backends. To import statement 
+run the following command:
+
+.. code-block:: console
+
+   import openvino.torch 
+
+The ``torch.compile`` offers two backends to for OpenVINO:
 
 | ``openvino``
 |   With this backend, Torch FX subgraphs are directly converted to OpenVINO representation without any additional PyTorch based tracing/scripting.
@@ -38,7 +45,6 @@ To use ``torch.compile``, you need to add an import statement and define one of 
 
       .. code-block:: console
 
-         import openvino.torch 
          from openvino.frontend.pytorch.torchdynamo import backend
          ...
          model = torch.compile(model, backend='openvino')
@@ -56,7 +62,6 @@ To use ``torch.compile``, you need to add an import statement and define one of 
 
       .. code-block:: console
 
-         import openvino.torch
          from openvino.frontend.pytorch.torchdynamo import backend
          ...
          model = torch.compile(model, backend='openvino_ts')
