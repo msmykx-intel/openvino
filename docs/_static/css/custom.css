@@ -1136,7 +1136,7 @@ input:-webkit-autofill {
 }
 
 .details.sd-dropdown .sd-summary-up,
-details.sd-dropdown .sd-summary-down {
+.details.sd-dropdown .sd-summary-down {
     pointer-events: none;
     position: absolute;
     top: 1em;
