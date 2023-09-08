@@ -1125,3 +1125,15 @@ input:-webkit-autofill {
     margin-right: 2rem;
     overflow: hidden;
 }
+
+.details.sd-dropdown .sd-summary-title {
+
+    padding-left: 3em;
+
+}
+
+.details.sd-dropdown .sd-summary-up, details.sd-dropdown .sd-summary-down {
+
+    left: 2em;
+
+}
