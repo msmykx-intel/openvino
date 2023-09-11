@@ -1127,18 +1127,12 @@ input:-webkit-autofill {
 }
 
 .details.sd-dropdown .sd-summary-title {
-    font-weight: 700;
     padding-left: 3em;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
+
 }
 
-.details.sd-dropdown .sd-summary-up,
+.details.sd-dropdown .sd-summary-up, 
 .details.sd-dropdown .sd-summary-down {
-    pointer-events: none;
-    position: absolute;
-    top: 1em;
-    left: 1em;
+    left: 2em;
+
 }
