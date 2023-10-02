@@ -46,9 +46,9 @@ Installing OpenVINO Runtime with Conan Package Manager
 
 1. Install Conan 2.0 or higher
    
-   .. code-block:: sh
+   <!-- .. code-block:: sh
 
-      python3 -m pip install conan
+      python3 -m pip install conan -->
 
 2. Create a conanfile.txt file for your OpenVINO project and add "openvino" dependency in there:
 
