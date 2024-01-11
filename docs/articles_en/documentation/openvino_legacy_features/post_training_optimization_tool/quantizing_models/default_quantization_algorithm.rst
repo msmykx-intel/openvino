@@ -136,16 +136,6 @@ Tutorials:
 * `Quantization of Segmentation model for medical data <https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/110-ct-segmentation-quantize>`__
 * `Quantization of BERT for Text Classification <https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/105-language-quantize-bert>`__
 
-Examples:
-
-* :doc:`Quantization of 3D segmentation model <pot_example_3d_segmentation_README>`
-* :doc:`Quantization of Face Detection model <pot_example_face_detection_README>`
-* :doc:`Quantization of speech model for GNA device <pot_example_speech_README>`
-
-Command-line example:
-
-* :doc:`Quantization of Image Classification model <pot_configs_examples_README>`
-
 A template and full specification for DefaultQuantization algorithm for POT command-line interface:
 
 * `Template <https://github.com/openvinotoolkit/openvino/blob/master/tools/pot/openvino/tools/pot/configs/templates/default_quantization_template.json>`__

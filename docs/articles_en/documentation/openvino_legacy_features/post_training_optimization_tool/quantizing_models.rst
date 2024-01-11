@@ -175,7 +175,7 @@ article or use :doc:`Accuracy-aware Quantization <pot_accuracyaware_usage>` meth
 Quantizing cascaded models
 ##########################
 
-When the optimized model is a cascaded one (consists of several submodels, for example, MT-CNN), it will be necessary to implement a complex inference pipeline that can properly handle different submodels and data flow between them. POT API provides the ``Engine`` interface for this purpose, which allows customization of the inference logic. However, it is recommended to inherit from ``IEEngine`` helper class that already contains all the logic required to do the inference based on OpenVINO Python API. For more details, see the following :doc:`example <pot_example_face_detection_README>`.
+When the optimized model is a cascaded one (consists of several submodels, for example, MT-CNN), it will be necessary to implement a complex inference pipeline that can properly handle different submodels and data flow between them. POT API provides the ``Engine`` interface for this purpose, which allows customization of the inference logic. However, it is recommended to inherit from ``IEEngine`` helper class that already contains all the logic required to do the inference based on OpenVINO Python API.
 
 Examples
 ####################
@@ -187,10 +187,7 @@ Examples
   * `Quantization of Segmentation model for medical data <https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/110-ct-segmentation-quantize>`__
   * `Quantization of BERT for Text Classification <https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/105-language-quantize-bert>`__
 
-* Samples:
 
-  * :doc:`Quantization of 3D segmentation model <pot_example_3d_segmentation_README>`
-  * :doc:`Quantization of Face Detection model <pot_example_face_detection_README>`
-  * :doc:`Quantization of speech model for GNA device <pot_example_speech_README>`
+
 
 

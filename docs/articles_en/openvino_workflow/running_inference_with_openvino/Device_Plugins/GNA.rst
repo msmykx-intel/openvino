@@ -150,11 +150,6 @@ quantization hints based on statistics for the provided dataset.
 
 :doc:`Hello Query Device C++ Sample <openvino_inference_engine_samples_hello_query_device_README>` can be used to print out supported data types for all detected devices.
 
-:doc:`POT API Usage sample for GNA <pot_example_speech_README>` demonstrates how a model can be quantized for GNA, using POT API in two modes:
-
-* Accuracy (i16 weights)
-* Performance (i8 weights)
-
 For POT quantized models, the ``ov::hint::inference_precision`` property has no effect except in cases described in the
 `Model and Operation Limitations section <#model-and-operation-limitations>`__.
 

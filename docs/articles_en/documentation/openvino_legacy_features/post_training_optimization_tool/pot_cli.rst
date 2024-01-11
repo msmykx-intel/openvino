@@ -56,9 +56,6 @@ For all available usage options, use the ``-h``, ``--help`` arguments or refer t
 By default, the results are dumped into the separate output subfolder inside the ``./results`` folder that is created 
 in the same directory where the tool is run from. Use the ``-e`` option to evaluate the accuracy directly from the tool.
 
-See also the :doc:`End-to-end example <pot_configs_examples_README>` about how to run a particular example of 8-bit
-quantization with the POT.
-
 Command-Line Arguments
 ++++++++++++++++++++++
 

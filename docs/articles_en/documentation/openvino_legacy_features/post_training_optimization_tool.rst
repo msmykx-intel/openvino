@@ -13,12 +13,6 @@
    Quantization Best Practices <pot_docs_BestPractices>
    API Reference <pot_compression_api_README>
    Command-line Interface <pot_compression_cli_README>
-   Examples <pot_examples_description>
-   Post-training Optimization Tool FAQ <pot_docs_FrequentlyAskedQuestions>
-   (Experimental) Protecting Model <pot_ranger_README>
-
-
-
 
 .. danger:: Post-training Optimization Tool is deprecated since OpenVINO 2023.0. :doc:`Neural Network Compression Framework (NNCF) <ptq_introduction>` is recommended for the post-training quantization instead.
 
@@ -84,18 +78,13 @@ If you quantized your model and it isn’t accurate enough, visit the :doc:`Quan
 page for tips on improving quantized performance. Sometimes, older Intel CPU generations can encounter a saturation issue when 
 running quantized models that can cause reduced accuracy: learn more on the :doc:`Saturation Issue Workaround <pot_saturation_issue>` page.
 
-Have more questions about post-training quantization or encountering errors using POT? Visit the 
-:doc:`POT FAQ <pot_docs_FrequentlyAskedQuestions>` page for answers to frequently asked questions and solutions to common errors.
-
 
 
 Additional Resources
 #######################################
 
 * `Tutorial: Migrate quantization from POT API to NNCF API <https://github.com/openvinotoolkit/openvino_notebooks/tree/main/notebooks/111-yolov5-quantization-migration>`__
-* :doc:`Post-training Quantization Examples <pot_examples_description>`
 * :doc:`Quantization Best Practices <pot_docs_BestPractices>`
-* :doc:`Post-training Optimization Tool FAQ <pot_docs_FrequentlyAskedQuestions>`
 * :doc:`Performance Benchmarks <openvino_docs_performance_benchmarks>`
 
 
