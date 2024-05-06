@@ -24,7 +24,7 @@ In order to be able to execute a particular DL operation in low-precision all it
 between operation and data blobs.  The figure below shows an example of quantized Convolution which contains two FakeQuantize nodes: one for
 weights and one for activations (bias is quantized using the same parameters).
 
-.. image:: ../../../../../_static/images/IE_PLUGIN_DG/images/quantized_convolution.png
+.. image:: ../../../../../assets/images/quantized_convolution.png
 
 
 Starting from OpenVINO 2020.2 release all the quantized models are represented in the compressed form. It means that the weights
