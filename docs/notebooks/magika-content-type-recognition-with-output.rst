@@ -63,7 +63,7 @@ Prerequisites
 
 .. code:: ipython3
 
-    %pip install -q magika "openvino>=2024.1.0" "gradio>=4.19"
+    %pip install -q magika "openvino>=2024.2.0" "gradio>=4.19"
 
 
 .. parsed-literal::
