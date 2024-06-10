@@ -79,6 +79,9 @@ Below are the instructions on how to install the OpenCL packages on supported Li
 
          rpm -ivh http://mirror.centos.org/centos/8-stream/AppStream/x86_64/os/Packages/ocl-icd-2.2.12-1.el8.x86_64.rpm
 
+   .. tab-item:: eLxr 12
+      :sync: elxr-12
+
 .. _gpu guide windows:
 
 Windows

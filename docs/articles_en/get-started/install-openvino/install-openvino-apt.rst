@@ -101,6 +101,13 @@ Step 1: Set Up the OpenVINO Toolkit APT Repository
 
             echo "deb https://apt.repos.intel.com/openvino/2024 ubuntu18 main" | sudo tee /etc/apt/sources.list.d/intel-openvino-2024.list
 
+      .. tab-item:: eLxr 12
+         :sync: elxr-12
+
+         .. code-block:: sh
+
+
+
 
 3. Update the list of packages via the update command:
 
