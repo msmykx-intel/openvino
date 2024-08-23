@@ -9,6 +9,33 @@ Quantizing Models Post-training
    quantizing-models-post-training/quantizing-with-accuracy-control
 
 
+
+
+
+
+
+
+
+
+
+The recommended approach to obtain an OpenVINO quantized model is to convert
+`a model from its original framework <https://huggingface.co/models>`__ to ``ov.Model``
+and ensure that it works correctly in OpenVINO. You can calculate the model metrics
+to do so. Then, ``ov.Model`` can be used as input for the ``nncf.quantize()`` method
+to get the quantized model or as input for the ``nncf.compress_weights()`` method to
+compress weights, in the case of Large Language Models (see the diagram below).
+
+
+
+
+
+
+
+
+
+
+
+
 Post-training model optimization is the process of applying special methods that transform a
 model into a more hardware-friendly representation, without retraining or fine-tuning it. The
 most widely-adopted method is **8-bit post-training quantization** because it is:
